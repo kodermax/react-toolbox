@@ -25,7 +25,7 @@ class IconButton extends React.Component {
     primary: false
   };
 
-  handleMouseUp = () => {
+  handleMouseUp = (event) => {
     this.refs.button.blur();
     if (this.props.onMouseUp) this.props.onMouseUp(event);
   };
