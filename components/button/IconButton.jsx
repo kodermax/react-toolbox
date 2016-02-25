@@ -29,6 +29,10 @@ class IconButton extends React.Component {
     this.refs.button.blur();
     if (this.props.onMouseUp) this.props.onMouseUp(event);
   };
+  handleMouseLeave = (event) => {
+    this.refs.button.blur();
+    if (this.props.onMouseLeave) this.props.onMouseLeave(event);
+  };
 
   render () {
     const {accent, children, className, href, icon, inverse, neutral, primary, ...others} = this.props;
@@ -46,7 +50,7 @@ class IconButton extends React.Component {
       className: classes,
       disabled: this.props.disabled,
       onMouseUp: this.handleMouseUp,
-      onMouseLeave: this.handleMouseUp,
+      onMouseLeave: this.handleMouseLeave,
       'data-react-toolbox': 'button'
     };
 
