@@ -1,20 +1,20 @@
-﻿// Type definitions for react-toolbox 0.14.1
-// Project: http://react-toolbox.com/
+﻿// Type definitions for russian-react-toolbox 0.14.1
+// Project: http://russian-react-toolbox.com/
 // Definitions by: @xogeny (Michael M. Tiller), @hsrobflavorus (Robert Parker)
 /*  CHANGES
     * 02/03/2016:
         * Fixed for TypeScript 1.8.0 stricter var declaration requirements (move `declare var ...` inside each individual module).
         * Removed triple-slash reference to React to fix npm install compatibility (you'll need to make sure you're referencing react.d.ts somewhere in your project!).
         * Hopefully fixed the default exports where applicable
-    * 01/13/2016: Minor changes, add a few missing props, add IconButton to react-toolbox/lib/button
-    * 12/21/2015: Fix "import * as Input from 'react-toolbox/lib/input'" style imports, which now correctly import only the necessary component(s).
+    * 01/13/2016: Minor changes, add a few missing props, add IconButton to russian-react-toolbox/lib/button
+    * 12/21/2015: Fix "import * as Input from 'russian-russian-react-toolbox/lib/input'" style imports, which now correctly import only the necessary component(s).
         * NOTE that you must use "import * as {Component Name}" not just "import {Component Name}" for this to work.
-    * 12/20/2015: Should be compatible with 0.14.0. Refactor modules into 'react-toolbox/lib/*' format. 
+    * 12/20/2015: Should be compatible with 0.14.0. Refactor modules into 'russian-react-toolbox/lib/*' format. 
         Unfortunately importing them directly in that manner doesn't seem to work
-        i.e. "import Input from 'react-toolbox/lib/input'" resolves to undefined, whereas "import { Input } from 'react-toolbox'" works fine!
+        i.e. "import Input from 'russian-react-toolbox/lib/input'" resolves to undefined, whereas "import { Input } from 'russian-react-toolbox'" works fine!
         ... Any ideas welcome!
     * 12/20/2015: Add AppBar, Avatar, and refactor Card and its child Components to match the documentation.
-    * 12/18/2015: Update to react-toolbox 0.13.1 (from 0.12.11)
+    * 12/18/2015: Update to russian-react-toolbox 0.13.1 (from 0.12.11)
     * 12/18/2015: Use JSDoc-style comments to provide Intellisense where supported
 */
 /*
@@ -42,20 +42,20 @@ declare namespace __RT {
         /**
          * Tooltip text
          * APPLIES ONLY IF THE COMPONENT IS WRAPPED WITH Tooltip.
-         * @see http://react-toolbox.com/#/components/tooltip
+         * @see http://russian-react-toolbox.com/#/components/tooltip
          */
         tooltip?: string,
         /**
          * Amount of time in miliseconds spent before the tooltip is visible.
          * APPLIES ONLY IF THE COMPONENT IS WRAPPED WITH Tooltip.
-         * @see http://react-toolbox.com/#/components/tooltip
+         * @see http://russian-react-toolbox.com/#/components/tooltip
          */
         tooltipDelay?: number,
         /**
          * If true, the Tooltip hides after a click in the host component.
          * APPLIES ONLY IF THE COMPONENT IS WRAPPED WITH Tooltip.
          * @default true
-         * @see http://react-toolbox.com/#/components/tooltip
+         * @see http://russian-react-toolbox.com/#/components/tooltip
          */
         tooltipHideOnClick?: boolean,
     }
@@ -1041,25 +1041,25 @@ declare namespace __RT {
 }
 
 declare var AppBar: typeof __RT.AppBar;
-declare module 'react-toolbox/lib/app_bar' {
+declare module 'russian-react-toolbox/lib/app_bar' {
     export default AppBar;
 }
 declare var Autocomplete: typeof __RT.Autocomplete;
-declare module 'react-toolbox/lib/autocomplete' {
+declare module 'russian-react-toolbox/lib/autocomplete' {
     export default Autocomplete;
 }
 declare var Avatar: typeof __RT.Avatar;
-declare module 'react-toolbox/lib/avatar' {
+declare module 'russian-react-toolbox/lib/avatar' {
     export default Avatar;
 }
 
-declare module 'react-toolbox/lib/button' {
+declare module 'russian-react-toolbox/lib/button' {
     var Button: typeof __RT.Button;
     var IconButton: typeof __RT.IconButton;
     export { Button, IconButton };
 }
 
-declare module 'react-toolbox/lib/card' {
+declare module 'russian-react-toolbox/lib/card' {
     var Card: typeof __RT.Card;
     var CardActions: typeof __RT.CardActions;
     var CardMedia: typeof __RT.CardMedia;
@@ -1075,39 +1075,39 @@ declare module 'react-toolbox/lib/card' {
     }
 }
 declare var Checkbox: typeof __RT.Checkbox;
-declare module 'react-toolbox/lib/checkbox' {
+declare module 'russian-react-toolbox/lib/checkbox' {
     export default Checkbox;
 }
 declare var DatePicker: typeof __RT.DatePicker;
-declare module 'react-toolbox/lib/date_picker' {
+declare module 'russian-react-toolbox/lib/date_picker' {
     export default DatePicker;
 }
 declare var Dialog: typeof __RT.Dialog;
-declare module 'react-toolbox/lib/dialog' {
+declare module 'russian-react-toolbox/lib/dialog' {
     export default Dialog;
 }
 declare var Drawer: typeof __RT.Drawer;
-declare module 'react-toolbox/lib/drawer' {
+declare module 'russian-react-toolbox/lib/drawer' {
     export default Drawer;
 }
 declare var Dropdown: typeof __RT.Dropdown;
-declare module 'react-toolbox/lib/dropdown' {
+declare module 'russian-react-toolbox/lib/dropdown' {
     export default Dropdown;
 }
 declare var FontIcon: typeof __RT.FontIcon;
-declare module 'react-toolbox/lib/font_icon' {
+declare module 'russian-react-toolbox/lib/font_icon' {
     export default FontIcon;
 }
 declare var Input: typeof __RT.Input;
-declare module 'react-toolbox/lib/input' {
+declare module 'russian-react-toolbox/lib/input' {
     export default Input;
 }
 declare var Link: typeof __RT.Link;
-declare module 'react-toolbox/lib/link' {
+declare module 'russian-react-toolbox/lib/link' {
     export default Link;
 }
 
-declare module 'react-toolbox/lib/list' {
+declare module 'russian-react-toolbox/lib/list' {
     var List: typeof __RT.List;
     var ListItem: typeof __RT.ListItem;
     var ListCheckbox: typeof __RT.ListCheckbox;
@@ -1122,7 +1122,7 @@ declare module 'react-toolbox/lib/list' {
     }
 }
 
-declare module 'react-toolbox/lib/menu' {
+declare module 'russian-react-toolbox/lib/menu' {
     var Menu: typeof __RT.Menu;
     var IconMenu: typeof __RT.IconMenu;
     var MenuItem: typeof __RT.MenuItem;
@@ -1135,15 +1135,15 @@ declare module 'react-toolbox/lib/menu' {
     }
 }
 declare var Navigation: typeof __RT.Navigation;
-declare module 'react-toolbox/lib/navigation' {
+declare module 'russian-react-toolbox/lib/navigation' {
     export default Navigation;
 }
 declare var ProgressBar: typeof __RT.ProgressBar;
-declare module 'react-toolbox/lib/progress_bar' {
+declare module 'russian-react-toolbox/lib/progress_bar' {
     export default ProgressBar;
 }
 
-declare module 'react-toolbox/lib/radio' {
+declare module 'russian-react-toolbox/lib/radio' {
     var RadioGroup: typeof __RT.RadioGroup;
     var RadioButton: typeof __RT.RadioButton;
     export {
@@ -1152,60 +1152,60 @@ declare module 'react-toolbox/lib/radio' {
     }
 }
 declare var Slider: typeof __RT.Slider;
-declare module 'react-toolbox/lib/slider' {
+declare module 'russian-react-toolbox/lib/slider' {
     export default Slider;
 }
 declare var Snackbar: typeof __RT.Snackbar;
-declare module 'react-toolbox/lib/snackbar' {
+declare module 'russian-react-toolbox/lib/snackbar' {
     export default Snackbar;
 }
 declare var Switch: typeof __RT.Switch;
-declare module 'react-toolbox/lib/switch' {
+declare module 'russian-react-toolbox/lib/switch' {
     export default Switch;
 }
 declare var Table: typeof __RT.Table;
-declare module 'react-toolbox/lib/table' {
+declare module 'russian-react-toolbox/lib/table' {
     export default Table;
 }
 
-declare module 'react-toolbox/lib/tabs' {
+declare module 'russian-react-toolbox/lib/tabs' {
     var Tab: typeof __RT.Tab;
     var Tabs: typeof __RT.Tabs;
     export { Tab, Tabs }
 }
 declare var TimePicker: typeof __RT.TimePicker;
-declare module 'react-toolbox/lib/time_picker' {
+declare module 'russian-react-toolbox/lib/time_picker' {
     export default TimePicker;
 }
 declare var Tooltip: typeof __RT.Tooltip;
-declare module 'react-toolbox/lib/tooltip' {
+declare module 'russian-react-toolbox/lib/tooltip' {
     export default Tooltip;
 }
-declare module 'react-toolbox' {
-    import AppBar from 'react-toolbox/lib/app_bar';
-    import Autocomplete from 'react-toolbox/lib/autocomplete';
-    import Avatar from 'react-toolbox/lib/avatar';
-    import { Button }from 'react-toolbox/lib/button';
-    import { Card, CardActions, CardMedia, CardText, CardTitle} from 'react-toolbox/lib/card';
-    import Checkbox from 'react-toolbox/lib/checkbox';
-    import DatePicker from 'react-toolbox/lib/date_picker';
-    import Dialog from 'react-toolbox/lib/dialog';
-    import Drawer from 'react-toolbox/lib/drawer';
-    import Dropdown from 'react-toolbox/lib/dropdown';
-    import FontIcon from 'react-toolbox/lib/font_icon';
-    import Input from 'react-toolbox/lib/input';
-    import Link from 'react-toolbox/lib/link';
-    import {List, ListItem, ListCheckbox, ListSubHeader, ListDivider} from 'react-toolbox/lib/list';
-    import {Menu, IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
-    import Navigation from 'react-toolbox/lib/navigation';
-    import ProgressBar from 'react-toolbox/lib/progress_bar';
-    import {RadioGroup, RadioButton} from 'react-toolbox/lib/radio';
-    import Slider from 'react-toolbox/lib/slider';
-    import Snackbar from 'react-toolbox/lib/snackbar';
-    import Switch from 'react-toolbox/lib/switch';
-    import { Tab, Tabs } from 'react-toolbox/lib/tabs';
-    import TimePicker from 'react-toolbox/lib/time_picker';
-    import Tooltip from 'react-toolbox/lib/tooltip';
+declare module 'russian-react-toolbox' {
+    import AppBar from 'russian-react-toolbox/lib/app_bar';
+    import Autocomplete from 'russian-react-toolbox/lib/autocomplete';
+    import Avatar from 'russian-react-toolbox/lib/avatar';
+    import { Button }from 'russian-react-toolbox/lib/button';
+    import { Card, CardActions, CardMedia, CardText, CardTitle} from 'russian-react-toolbox/lib/card';
+    import Checkbox from 'russian-react-toolbox/lib/checkbox';
+    import DatePicker from 'russian-react-toolbox/lib/date_picker';
+    import Dialog from 'russian-react-toolbox/lib/dialog';
+    import Drawer from 'russian-react-toolbox/lib/drawer';
+    import Dropdown from 'russian-react-toolbox/lib/dropdown';
+    import FontIcon from 'russian-react-toolbox/lib/font_icon';
+    import Input from 'russian-react-toolbox/lib/input';
+    import Link from 'russian-react-toolbox/lib/link';
+    import {List, ListItem, ListCheckbox, ListSubHeader, ListDivider} from 'russian-react-toolbox/lib/list';
+    import {Menu, IconMenu, MenuItem, MenuDivider} from 'russian-react-toolbox/lib/menu';
+    import Navigation from 'russian-react-toolbox/lib/navigation';
+    import ProgressBar from 'russian-react-toolbox/lib/progress_bar';
+    import {RadioGroup, RadioButton} from 'russian-react-toolbox/lib/radio';
+    import Slider from 'russian-react-toolbox/lib/slider';
+    import Snackbar from 'russian-react-toolbox/lib/snackbar';
+    import Switch from 'russian-react-toolbox/lib/switch';
+    import { Tab, Tabs } from 'russian-react-toolbox/lib/tabs';
+    import TimePicker from 'russian-react-toolbox/lib/time_picker';
+    import Tooltip from 'russian-react-toolbox/lib/tooltip';
 
     export {
     AppBar,

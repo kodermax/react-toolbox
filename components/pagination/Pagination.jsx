@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconButton} from 'react-toolbox/lib/button';
+import {IconButton} from '../button';
 
 export default class Pagination extends React.Component {
   static propTypes = {
