@@ -25,6 +25,7 @@ export MenuItem from './menu/MenuItem';
 export MenuDivider from './menu/MenuDivider';
 export IconMenu from './menu/IconMenu';
 export Navigation from './navigation';
+export Pagination from './pagination';
 export ProgressBar from './progress_bar';
 export RadioGroup from './radio/RadioGroup';
 export RadioButton from './radio/RadioButton';
