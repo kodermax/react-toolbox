@@ -36,12 +36,7 @@ class TableRow extends React.Component {
   }
 
   renderCell (key) {
-    const value = this.props.data[key];
-    if (this.props.onChange) {
-      return this.renderInput(key, value);
-    } else if (value) {
-      return value.toString();
-    }
+    return this.props.data[key];
   }
 
   renderInput (key, value) {
@@ -60,7 +55,6 @@ class TableRow extends React.Component {
 
   render () {
     const className = ClassNames(style.row, {
-      [style.editable]: this.props.onChange,
       [style.selected]: this.props.selected
     });
 

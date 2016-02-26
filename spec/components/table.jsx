@@ -26,19 +26,12 @@ const UserModel = {
     title: 'Статус заявки',
     type: String,
   },
-  approval: {
-    title: 'Статус согласования',
-    type: String,
-  },
-  responsible: {
-    title: 'Ответственный',
-    type: String,
-  },
 };
 
 const users = [
-  {name: 'Javi Jimenez', twitter: '@soyjavi', birthdate: new Date(1980, 3, 11), cats: 1},
-  {name: 'Javi Velasco', twitter: '@javivelasco', birthdate: new Date(1987, 1, 1), dogs: 1, owner: true}
+  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
+  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
+  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
 ];
 
 class TableTest extends React.Component {
@@ -64,7 +57,6 @@ class TableTest extends React.Component {
         <p style={{marginBottom: '10px'}}>Organized data.</p>
         <Table
           model={UserModel}
-          onChange={this.handleChange}
           onSelect={this.handleSelect}
           selectable
           selected={this.state.selected}

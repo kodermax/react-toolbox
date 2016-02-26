@@ -29,7 +29,10 @@ strong, sub, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
   border: 0;
   outline: 0;
 }
-
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 h1, h2, h3, h4, h5, h6, label, p, button, abbr, a, span, small {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
