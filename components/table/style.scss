@@ -16,10 +16,14 @@
     &:first-letter {
       text-transform: capitalize;
     }
+
   }
   th, td {
     position: relative;
     padding: 0 $table-row-offset;
+    &.sortable {
+      cursor: pointer;
+    }
     &.selectable {
       width: 1.8 * $unit;
       padding-right: 0;
@@ -48,7 +52,11 @@
 .selected, .row:hover {
   background-color: $table-row-highlight;
 }
-
+.sortIcon {
+  vertical-align: middle;
+  font-size: 16px;
+  margin-right: 8px;
+}
 .editable > * {
   cursor: pointer;
 }

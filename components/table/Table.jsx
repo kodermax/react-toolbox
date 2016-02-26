@@ -10,6 +10,7 @@ class Table extends React.Component {
     model: React.PropTypes.object,
     onChange: React.PropTypes.func,
     onSelect: React.PropTypes.func,
+    onSort: React.PropTypes.func,
     selectable: React.PropTypes.bool,
     selected: React.PropTypes.array,
     source: React.PropTypes.array
@@ -28,6 +29,11 @@ class Table extends React.Component {
       const {source, selected} = this.props;
       const newSelected = source.length === selected.length ? [] : source.map((i, idx) => idx);
       this.props.onSelect(newSelected);
+    }
+  };
+  handleSort = (value) => {
+    if (this.props.onSort) {
+      this.props.onSort(value);
     }
   };
 
@@ -54,6 +60,7 @@ class Table extends React.Component {
         <TableHead
           model={model}
           onSelect={this.handleFullSelect}
+          onSort={this.handleSort}
           selectable={selectable}
           selected={isSelected}
         />

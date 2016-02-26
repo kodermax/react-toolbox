@@ -4,6 +4,7 @@ import Table from '../../components/table';
 const UserModel = {
   id: {
     title: 'ID',
+    sort: true,
     type: String,
   },
   title: {
@@ -49,6 +50,9 @@ class TableTest extends React.Component {
   handleSelect = (selected) => {
     this.setState({selected});
   };
+  handleSort = (key) => {
+    console.log(key)
+  };
 
   render () {
     return (
@@ -58,6 +62,7 @@ class TableTest extends React.Component {
         <Table
           model={UserModel}
           onSelect={this.handleSelect}
+          onSort={this.handleSort}
           selectable
           selected={this.state.selected}
           source={this.state.source}
