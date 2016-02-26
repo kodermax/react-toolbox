@@ -1,13 +1,13 @@
 {
   "name": "russian-react-toolbox",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Русский модуль React-Toolbox",
   "author": "kodermax",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kodermax/react-toolbox/issues"
+    "url": "https://github.com/kodermax/russian-react-toolbox/issues"
   },
-  "homepage": "https://github.com/kodermax/react-toolbox#readme",
+  "homepage": "https://github.com/kodermax/russian-react-toolbox#readme",
   "main": "./lib",
   "scripts": {
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
@@ -91,7 +91,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kodermax/react-toolbox.git"
+    "url": "git+https://github.com/kodermax/russian-react-toolbox.git"
   },
   "keywords": [
     "russian",
