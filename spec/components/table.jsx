@@ -2,12 +2,38 @@ import React from 'react';
 import Table from '../../components/table';
 
 const UserModel = {
-  name: {type: String},
-  twitter: {type: String},
-  birthdate: {type: Date},
-  cats: {type: Number},
-  dogs: {type: Number},
-  owner: {type: Boolean}
+  id: {
+    title: 'ID',
+    type: String,
+  },
+  title: {
+    title: 'Заголовок',
+    type: String,
+  },
+  createdBy: {
+    title: 'Кто создал',
+    type: String,
+  },
+  changedBy: {
+    title: 'Кто изменил',
+    type: String,
+  },
+  messages: {
+    title: 'Сооб.',
+    type: String,
+  },
+  status: {
+    title: 'Статус заявки',
+    type: String,
+  },
+  approval: {
+    title: 'Статус согласования',
+    type: String,
+  },
+  responsible: {
+    title: 'Ответственный',
+    type: String,
+  },
 };
 
 const users = [
