@@ -1,21 +1,13 @@
 {
-  "name": "react-toolbox",
-  "version": "0.14.0",
-  "homepage": "http://www.react-toolbox.com",
-  "description": "A set of React components implementing Google's Material Design specification with the power of CSS Modules.",
-  "author": "React Toolbox Team (http://github.com/react-toolbox)",
-  "contributors": [
-    {
-      "name": "Javi Jimenez Villar",
-      "url": "http://soyjavi.com/",
-      "email": "javi.jimenez.villar@gmail.com"
-    },
-    {
-      "name": "Javi Velasco Arjona",
-      "url": "http://javivelasco.com/",
-      "email": "javier.velasco86@gmail.com"
-    }
-  ],
+  "name": "russian-react-toolbox",
+  "version": "1.0.0",
+  "description": "Русский модуль React-Toolbox",
+  "author": "kodermax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kodermax/react-toolbox/issues"
+  },
+  "homepage": "https://github.com/kodermax/react-toolbox#readme",
   "main": "./lib",
   "scripts": {
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
@@ -31,18 +23,10 @@
     "release": "bumped release",
     "patch": "bumped release patch"
   },
-  "bugs": {
-    "url": "https://github.com/react-toolbox/react-toolbox/issues",
-    "email": "issues@react-toolbox.com"
+  "directories": {
+    "doc": "docs"
   },
-  "keywords": [
-    "react",
-    "react-component",
-    "material design",
-    "toolkit",
-    "components"
-  ],
-  "license": "MIT",
+  "typings": "./react-toolbox.d.ts",
   "peerDependencies": {
     "classnames": "^2.2.0",
     "react": "^0.14",
@@ -50,7 +34,9 @@
     "react-addons-css-transition-group": "^0.14.0",
     "normalize.css": "^3.0.3"
   },
-  "typings": "./react-toolbox.d.ts",
+  "dependencies": {
+    "classnames": "^2.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^6.2.1",
     "babel-cli": "^6.3.17",
@@ -103,8 +89,14 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
   },
-  "repository": "github:react-toolbox/react-toolbox",
-  "dependencies": {
-    "classnames": "^2.2.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodermax/react-toolbox.git"
+  },
+  "keywords": [
+    "russian",
+    "react",
+    "material",
+    "elements"
+  ]
 }

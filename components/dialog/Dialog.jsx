@@ -6,7 +6,7 @@ import style from './style.scss';
 
 const Dialog = (props) => {
   const actions = props.actions.map((action, idx) => {
-    const className = ClassNames(style.button, {[action.className]: action.className});
+    const className = ClassNames({[action.className]: action.className});
     return <Button key={idx} {...action} className={className} />;
   });
 
