@@ -11,6 +11,7 @@ class ProgressBar extends React.Component {
     min: React.PropTypes.number,
     mode: React.PropTypes.string,
     multicolor: React.PropTypes.bool,
+    status: React.PropTypes.oneOf(['loading', 'hide']),
     type: React.PropTypes.oneOf(['linear', 'circular']),
     value: React.PropTypes.number
   };
@@ -22,6 +23,7 @@ class ProgressBar extends React.Component {
     min: 0,
     mode: 'indeterminate',
     multicolor: false,
+    status: 'hide',
     type: 'linear',
     value: 0
   };
@@ -74,14 +76,17 @@ class ProgressBar extends React.Component {
     }, this.props.className);
 
     return (
-      <div
-        data-react-toolbox='progress-bar'
-        aria-valuenow={this.props.value}
-        aria-valuemin={this.props.min}
-        aria-valuemax={this.props.max}
-        className={className}
-      >
-        {this.props.type === 'circular' ? this.renderCircular() : this.renderLinear()}
+      <div>
+        {this.props.status !== 'hide' ?
+          <div
+            data-react-toolbox='progress-bar'
+            aria-valuenow={this.props.value}
+            aria-valuemin={this.props.min}
+            aria-valuemax={this.props.max}
+            className={className}
+          >
+            {this.props.type === 'circular' ? this.renderCircular() : this.renderLinear()}
+          </div> : undefined}
       </div>
     );
   }
