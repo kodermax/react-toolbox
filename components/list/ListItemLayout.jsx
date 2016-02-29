@@ -41,7 +41,7 @@ ListItemLayout.propTypes = {
   itemContent: React.PropTypes.element,
   leftActions: React.PropTypes.array,
   leftIcon: React.PropTypes.any,
-  legend: React.PropTypes.string,
+  legend: React.PropTypes.any,
   rightActions: React.PropTypes.array,
   rightIcon: React.PropTypes.any,
   selectable: React.PropTypes.bool,

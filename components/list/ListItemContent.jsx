@@ -8,7 +8,7 @@ class ListItemContent extends React.Component {
   static propTypes = {
     caption: React.PropTypes.string,
     children: React.PropTypes.any,
-    legend: React.PropTypes.string,
+    legend: React.PropTypes.any,
     type: React.PropTypes.oneOf(types)
   };
 
