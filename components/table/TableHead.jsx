@@ -6,9 +6,10 @@ import style from './style';
 const TableHead = ({model, onSelect, onSort, selectable, selected}) => {
   let selectCell;
   const contentCells = Object.keys(model).map((key) => {
-      if(model[key].sort)
+      if(model[key].sortable)
         return <th key={key} className={style.sortable} onMouseUp={onSort.bind(this, key)}>
-          <FontIcon value="arrow_upward" className={style.sortIcon} />
+          {model[key].sort && model[key].sort === 'asc' ? <FontIcon value="arrow_upward" className={style.sortIcon} /> :
+          model[key].sort === 'desc' ? <FontIcon value="arrow_downward" className={style.sortIcon} /> : undefined}
           <span style={{verticalAlign: 'middle'}}>
               {model[key].title}
           </span>

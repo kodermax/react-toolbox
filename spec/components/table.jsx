@@ -4,7 +4,8 @@ import Table from '../../components/table';
 const UserModel = {
   id: {
     title: 'ID',
-    sort: true,
+    sortable: true,
+    sort: 'desc',
     type: String,
   },
   title: {
