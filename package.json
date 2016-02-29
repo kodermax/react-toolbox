@@ -1,6 +1,6 @@
 {
   "name": "russian-react-toolbox",
-  "version": "1.0.13",
+  "version": "1.0.16",
   "description": "Русский модуль React-Toolbox",
   "author": "kodermax",
   "license": "MIT",
@@ -97,6 +97,7 @@
     "russian",
     "react",
     "material",
-    "elements"
+    "elements",
+    "business"
   ]
 }
