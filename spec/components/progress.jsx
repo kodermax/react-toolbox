@@ -42,7 +42,7 @@ class ProgressBarTest extends React.Component {
       <section>
         <h5>Progress bars</h5>
         <p style={{margin: '10px auto'}}>Determinate</p>
-        <ProgressBar mode='determinate' value={this.state.progress} buffer={this.state.buffer}/>
+        <ProgressBar mode='determinate' status="loading" value={this.state.progress} buffer={this.state.buffer}/>
         <p style={{margin: '10px auto'}}>Indeterminate...</p>
         <ProgressBar mode='indeterminate' status="loading"/>
         <p style={{margin: '10px auto'}}>Circular</p>
