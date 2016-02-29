@@ -56,7 +56,7 @@ class ListTest extends React.Component {
               rightIcon='star'
             />
             <ListItem
-              avatar='https://avatars2.githubusercontent.com/u/559654?v=3&s=460'
+              avatarIcon="person"
               caption='Javi Jiménez'
               legend='Frontend engineer at MediaSmart'
               rightIcon='star'

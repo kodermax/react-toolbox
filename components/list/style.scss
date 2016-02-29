@@ -68,9 +68,6 @@
 }
 
 .left {
-  [data-react-toolbox='font-icon'] {
-    width: $list-item-icon-size;
-  }
   & :last-child {
     > [data-react-toolbox='font-icon'] {
       margin-right: $list-item-right-icon-margin;

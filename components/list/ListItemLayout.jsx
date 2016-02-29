@@ -13,6 +13,7 @@ const ListItemLayout = (props) => {
   }, props.className);
 
   const leftActions = [
+    props.avatarIcon && <Avatar icon={props.avatarIcon} key='avatar'/>,
     props.leftIcon && <FontIcon value={props.leftIcon} key='leftIcon'/>,
     props.avatar && <Avatar image={props.avatar} key='avatar'/>,
     ...props.leftActions
@@ -34,6 +35,7 @@ const ListItemLayout = (props) => {
 
 ListItemLayout.propTypes = {
   avatar: React.PropTypes.string,
+  avatarIcon: React.PropTypes.string,
   caption: React.PropTypes.string,
   children: React.PropTypes.any,
   className: React.PropTypes.string,
