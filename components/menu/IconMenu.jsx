@@ -16,7 +16,8 @@ class IconMenu extends React.Component {
     onShow: React.PropTypes.func,
     position: React.PropTypes.string,
     selectable: React.PropTypes.bool,
-    selected: React.PropTypes.any
+    selected: React.PropTypes.any,
+    style: React.PropTypes.object
   };
 
   static defaultProps = {
@@ -38,7 +39,7 @@ class IconMenu extends React.Component {
     if (this.props.className) className += ` ${this.props.className}`;
 
     return (
-      <div className={className}>
+      <div className={className} style={this.props.style}>
         <IconButton
           className={style.icon}
           icon={this.props.icon}

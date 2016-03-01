@@ -38,6 +38,7 @@ class IconMenuTest extends React.Component {
           onSelect={this.handleSelect}
           selectable
           selected={this.state.selected}
+          style={{verticalAlign: 'top'}}
         >
           <MenuItem onClick={this.handleItem} value='refresh' caption='Refresh' />
           <MenuItem value='help' caption='Help & Feedback' />
