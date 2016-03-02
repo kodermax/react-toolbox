@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from '../../components/table';
+import Pagination from '../../components/pagination';
 
 const UserModel = {
   id: {
@@ -54,6 +55,12 @@ class TableTest extends React.Component {
   handleSort = (key) => {
     console.log(key)
   };
+  handlePageClick = (page) => {
+    console.log(page);
+  };
+  handleChangeLimit = (value) => {
+    console.log(value);
+  };
 
   render () {
     return (
@@ -67,6 +74,10 @@ class TableTest extends React.Component {
           selectable
           selected={this.state.selected}
           source={this.state.source}
+        />
+        <Pagination page={1} limit={10} total={5}
+          onChangeLimit={this.handleChangeLimit}
+          onPageClick={this.handlePageClick}
         />
       </section>
     );

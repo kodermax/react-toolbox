@@ -1,0 +1,18 @@
+@import "../base";
+.pagination {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  display: inline-block;
+  > .dropdown {
+    display: inline-block;
+    width: 40px;
+  }
+  > span {
+    padding-right: 10px;
+  }
+  & input {
+    color: rgba(0, 0, 0, 0.54)!important;
+    font-size: 1.3rem;
+  }
+}
+
