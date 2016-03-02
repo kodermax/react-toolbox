@@ -19,9 +19,9 @@ class Snackbar extends React.Component {
   };
 
   componentDidUpdate () {
-    if (this.props.active && this.props.timeout && this.props.onTimeout) {
+    if (this.props.active && this.props.timeout) {
       setTimeout(() => {
-        this.props.onTimeout();
+         this.props.onTimeout();
       }, this.props.timeout);
     }
   }
@@ -29,7 +29,7 @@ class Snackbar extends React.Component {
   render () {
     const {action, active, icon, label, onClick, type } = this.props;
     const className = ClassNames([style.root, style[type]], {
-      [style.active]: active
+      [style.active]: this.state.active
     }, this.props.className);
 
     return (
