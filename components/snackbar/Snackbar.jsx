@@ -29,7 +29,7 @@ class Snackbar extends React.Component {
   render () {
     const {action, active, icon, label, onClick, type } = this.props;
     const className = ClassNames([style.root, style[type]], {
-      [style.active]: this.state.active
+      [style.active]: active
     }, this.props.className);
 
     return (
