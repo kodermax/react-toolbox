@@ -3,7 +3,6 @@
 [![npm version](https://img.shields.io/npm/v/react-toolbox.svg?style=flat-square)](https://www.npmjs.com/package/react-toolbox)
 [![Build Status](http://img.shields.io/travis/react-toolbox/react-toolbox/master.svg?style=flat-square)](https://travis-ci.org/react-toolbox/react-toolbox)
 [![NPM Status](http://img.shields.io/npm/dm/react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox)
-[![react-toolbox channel on discord](https://img.shields.io/badge/discord-%23react--toolbox%20%40%20reactiflux-61dafb.svg?style=flat-square)](https://discord.gg/0ZcbPKXt5bW9FLzM)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kodermax)
 
 Этот проект делается для бизнес-приложений.
@@ -16,7 +15,7 @@
 React Toolbox can be installed as an [npm package](https://www.npmjs.org/package/react-toolbox);
 
 ```
-npm install --save react-toolbox
+npm install --save russian-react-toolbox
 ```
 
 ## Usage
@@ -97,6 +96,3 @@ A TypeScript definition file `react-toolbox.d.ts` is available. It is referenced
 
 Note that to comply with the typings requirement, a triple-slash reference to `react.d.ts` is *NOT included*. You will need to reference [react.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/react/react.d.ts) somewhere in your project.
 
-
-## License 
-This project is licensed under the terms of the [MIT license](https://github.com/react-toolbox/react-toolbox/blob/master/LICENSE).
