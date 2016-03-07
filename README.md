@@ -20,7 +20,7 @@ npm install --save russian-react-toolbox
 
 ## Usage
 
-Although there are other ways to use React Toolbox, the recommended way is to create a Webpack workflow with [Babel Loader](https://github.com/babel/babel-loader), [CSS Loader](https://github.com/webpack/css-loader) and [SASS Loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
+Although there are other ways to use React Toolbox, the recommended way is to create a webpack workflow with [babel-loader](https://github.com/babel/babel-loader), [css-loader](https://github.com/webpack/css-loader) and [sass-loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
 
 Once you have the workflow ready, you can just require and use the components:
 
@@ -35,17 +35,17 @@ const CustomButton = () => (
 export default CustomButton;
 ```
 
-The previous code creates a React button component based on React toolbox button. It's important to notice that requiring a module from the exposed root of the package will import the **SASS** of the component.
+The previous code creates a React button component based on React Toolbox button. It's important to notice that requiring a module from the exposed root of the package will also import the **SASS** of the component.
 
 ## Roboto Font and Material Design Icons
 
 React Toolbox assumes that you are importing [Roboto Font](https://www.google.com/fonts/specimen/Roboto) and [Material Design Icons](https://www.google.com/design/icons/).
 
-In order to import the fonts for you, we'd need to include them in the CSS which is considered a bad practice. If you are not including them in your app yo to the linked sites and follow the instructions. 
+In order to import the fonts for you, we'd need to include them in the CSS which is considered a bad practice. If you are not including them in your app, go to the linked sites and follow the instructions. 
 
 ## App component
 
-There are some components in React Toolbox that requires special positioning. For example, `Dialog` and `Drawer` components block the scroll showing a fixed positioned overlay. To handle these cases, React Toolbox needs some styling in your root node. This can be achieved wrapping your app with a non intrusive `App` wrapper component:
+There are some components in React Toolbox that require special positioning. For example, `Dialog` and `Drawer` components block the scroll showing a fixed positioned overlay. To handle these cases, React Toolbox needs some styling in your root node. This can be achieved by wrapping your app with a non intrusive `App` wrapper component:
 
 ```jsx
 import React from 'react';
@@ -63,7 +63,7 @@ ReactDOM.render(
 
 ## Customization
 
-Since React Toolbox styles are written in CSS it's pretty easy to customize your components. We have several ways:
+Since React Toolbox styles are written in CSS, it's pretty easy to customize your components. We have several ways:
 
 ### Via React Toolbox Loader
 
@@ -73,7 +73,7 @@ With [toolbox-loader](https://github.com/react-toolbox/toolbox-loader) you can t
 
 ### Via `className` property
 
-Generally each component will have a `className` prop so you can tell the class name you want to keep in the root node of the resulting markup. All markup is style with the lowest specificity level so you can just nest one level in your CSS and the result will be applied. Consider this example:
+Generally each component will have a `className` prop so you can pass the class name you want to keep in the root node of the resulting markup. All markup is styled with the lowest specificity level so you can just nest one level in your CSS and the result will be applied. Consider this example:
 
 ```jsx
 const CustomButton = () => (
@@ -81,7 +81,7 @@ const CustomButton = () => (
 );
 ```
 
-If you browse the resulting markup you will see *data attributes* like `data-react-toolbox="label"` so you can avoid styling directly tag names. You can now write your CSS:
+If you browse the resulting markup you will see *data attributes* like `data-react-toolbox="label"` so you can avoid directly styling tag names. You can now write your CSS:
 
 ```css
 .customized > [data-react-toolbox="label"] {

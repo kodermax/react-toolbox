@@ -70,8 +70,8 @@ class Menu extends React.Component {
     return true;
   }
 
-  componentWillUpdate (prevState, nextState) {
-    if (!prevState.active && nextState.active) {
+  componentWillUpdate (nextProps, nextState) {
+    if (!this.state.active && nextState.active) {
       events.addEventsToDocument({click: this.handleDocumentClick});
     }
   }
@@ -138,10 +138,11 @@ class Menu extends React.Component {
 
   renderItems () {
     return React.Children.map(this.props.children, (item) => {
+      if (!item) return item;
       if (item.type === MenuItem) {
         return React.cloneElement(item, {
           ripple: item.props.ripple || this.props.ripple,
-          selected: item.props.value && this.props.selectable && item.props.value === this.props.selected,
+          selected: typeof item.props.value !== 'undefined' && this.props.selectable && item.props.value === this.props.selected,
           onClick: this.handleSelect.bind(this, item)
         });
       } else {
@@ -151,7 +152,8 @@ class Menu extends React.Component {
   }
 
   show () {
-    this.setState({active: true});
+    const { width, height } = this.refs.menu.getBoundingClientRect();
+    this.setState({active: true, width, height});
   }
 
   hide () {
