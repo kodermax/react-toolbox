@@ -1,7 +1,7 @@
 # Russian React Toolbox
 
 [![npm version](https://img.shields.io/npm/v/russian-react-toolbox.svg?style=flat-square)](https://www.npmjs.com/package/russian-react-toolbox)
-[![NPM Status](http://img.shields.io/npm/dm/react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/russian-react-toolbox)
+[![NPM Status](http://img.shields.io/npm/dm/russian-react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/russian-react-toolbox)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kodermax)
 
 Этот проект делается для бизнес-приложений.
