@@ -16,7 +16,8 @@ class AutosuggestTest extends React.Component {
   fetchData = (q) => {
     if (!q)
       q = '';
-    $.get(`http://dev.pharm.local/api/users?q=` + q, function(result){
+    let url = '?q=';
+    $.get(url + q, function(result){
       this.setState({usersObject: result});
     }.bind(this));
   };
