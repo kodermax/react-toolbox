@@ -38,7 +38,8 @@ class TableRow extends React.Component {
   }
 
   renderCell (key) {
-    return <div className={this.props.model[key].crop ? style.crop : undefined}>{this.props.data[key]}</div>;
+    return <div style={{width: this.props.model[key].width}}
+            className={this.props.model[key].crop ? style.crop : undefined}>{this.props.data[key]}</div>;
   }
 
   renderInput (key, value) {

@@ -13,6 +13,7 @@ const UserModel = {
     title: 'Заголовок',
     type: String,
     crop: true,
+    width: '200px',
   },
   createdBy: {
     title: 'Кто создал',
