@@ -35,7 +35,7 @@ const ListItemLayout = (props) => {
 
 ListItemLayout.propTypes = {
   avatar: React.PropTypes.string,
-  avatarIcon: React.PropTypes.string,
+  avatarIcon: React.PropTypes.any,
   caption: React.PropTypes.string,
   children: React.PropTypes.any,
   className: React.PropTypes.string,
