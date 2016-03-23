@@ -12,6 +12,7 @@ const UserModel = {
   title: {
     title: 'Заголовок',
     type: String,
+    crop: true,
   },
   createdBy: {
     title: 'Кто создал',
@@ -33,7 +34,8 @@ const UserModel = {
 
 const users = [
   {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
-  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
+  {id:  123, title: 'Бессознательное вызывает контраст, это обозначено Ли Россом как фундаментальная ошибка атрибуции, которая прослеживается во многих экспериментах.',
+    createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
   {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
 ];
 

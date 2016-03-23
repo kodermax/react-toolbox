@@ -40,6 +40,11 @@
     border-color: transparent;
   }
   > td {
+    .crop {
+      white-space: nowrap; /* Отменяем перенос текста */
+      overflow: hidden; /* Обрезаем содержимое */
+      text-overflow: ellipsis; /* Многоточие */
+    }
     > input {
       display: block;
       width: 100%;
