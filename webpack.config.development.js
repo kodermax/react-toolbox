@@ -20,6 +20,15 @@ module.exports = {
     extensions: ['', '.jsx', '.scss', '.js', '.json']
   },
   module: {
+    preLoaders: [
+      {
+        //Eslint loader
+        test: /\.(js|jsx)$/,
+        loader: 'eslint-loader',
+        include: [path.resolve(__dirname, "components")],
+        exclude: /node_modules/,
+      },
+    ],
     loaders: [
       {
         test: /\.(js|jsx)$/,
@@ -32,6 +41,9 @@ module.exports = {
     ]
   },
   postcss: [autoprefixer],
+  eslint: {
+    configFile: '.eslintrc'
+  },
   plugins: [
     new ExtractTextPlugin('spec.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
