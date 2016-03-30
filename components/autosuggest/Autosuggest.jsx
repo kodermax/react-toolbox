@@ -7,6 +7,7 @@ import events from '../utils/events';
 export default class Autosuggest extends React.Component {
   static propTypes = {
     className: React.PropTypes.string,
+    direction: React.PropTypes.string,
     error: React.PropTypes.string,
     label: React.PropTypes.string,
     multiple: React.PropTypes.bool,
@@ -67,7 +68,7 @@ export default class Autosuggest extends React.Component {
       return new Map(Object.keys(src).map((item, key) => [key, src[key]]));
     }
   }
-  handleSelect = (key, event) => {
+  handleSelect = (key) => {
     const query = this.getItem(key);
     if (this.props.onSelectItem) this.props.onSelectItem(key, query);
     this.setState({ focus: false, query: query.value }, () => { this.refs.input.blur(); });
