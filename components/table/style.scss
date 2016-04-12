@@ -65,3 +65,9 @@
 .editable > * {
   cursor: pointer;
 }
+
+@media only screen and (max-device-width: 1366px) {
+  .crop {
+    width:200px;
+  }
+}
