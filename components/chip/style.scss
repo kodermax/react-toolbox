@@ -11,6 +11,11 @@
   color: $chip-color;
   background-color: $chip-background;
   border-radius: $chip-height;
+  > *, :after, :before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .avatar {
@@ -59,3 +64,5 @@
     stroke: $chip-remove-color;
   }
 }
+
+
