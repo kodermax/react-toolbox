@@ -1,23 +1,21 @@
 export default {
   getMousePosition (event) {
     return {
-      x: event.pageX,
-      y: event.pageY
+      x: event.pageX - window.scrollX,
+      y: event.pageY - window.scrollY
     };
   },
 
   getTouchPosition (event) {
     return {
-      x: event.touches[0].pageX,
-      y: event.touches[0].pageY
+      x: event.touches[0].pageX - window.scrollX,
+      y: event.touches[0].pageY - window.scrollY
     };
   },
 
   pauseEvent (event) {
     event.stopPropagation();
     event.preventDefault();
-    event.returnValue = false;
-    event.cancelBubble = true;
   },
 
   addEventsToDocument (eventMap) {
@@ -39,5 +37,34 @@ export default {
       node = node.parentNode;
     }
     return false;
+  },
+
+  addEventListenerOnTransitionEnded (element, fn) {
+    const eventName = transitionEventNamesFor(element);
+    if (!eventName) return false;
+    element.addEventListener(eventName, fn);
+    return true;
+  },
+
+  removeEventListenerOnTransitionEnded (element) {
+    const eventName = transitionEventNamesFor(element);
+    if (!eventName) return false;
+    element.removeEventListener(eventName);
+    return true;
   }
 };
+
+const TRANSITIONS = {
+  'transition': 'transitionend',
+  'OTransition': 'oTransitionEnd',
+  'MozTransition': 'transitionend',
+  'WebkitTransition': 'webkitTransitionEnd'
+};
+
+function transitionEventNamesFor (element) {
+  for (const transition in TRANSITIONS) {
+    if (element.style[transition] !== undefined) {
+      return TRANSITIONS[transition];
+    }
+  }
+}

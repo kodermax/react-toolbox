@@ -5,12 +5,14 @@ import Avatar from 'react-toolbox/avatar/readme';
 import Button from 'react-toolbox/button/readme';
 import Card from 'react-toolbox/card/readme';
 import Checkbox from 'react-toolbox/checkbox/readme';
+import Chip from 'react-toolbox/chip/readme';
 import DatePicker from 'react-toolbox/date_picker/readme';
 import Dialog from 'react-toolbox/dialog/readme';
 import Drawer from 'react-toolbox/drawer/readme';
 import Dropdown from 'react-toolbox/dropdown/readme';
 import FontIcon from 'react-toolbox/font_icon/readme';
 import Input from 'react-toolbox/input/readme';
+import Layout from 'react-toolbox/layout/readme';
 import Link from 'react-toolbox/link/readme';
 import List from 'react-toolbox/list/readme';
 import Menu from 'react-toolbox/menu/readme';
@@ -31,6 +33,7 @@ import AutocompleteExample1 from './examples/autocomplete_example_1.txt';
 import AvatarExample1 from './examples/avatar_example_1.txt';
 import ButtonExample1 from './examples/button_example_1.txt';
 import CardExample1 from './examples/card_example_1.txt';
+import ChipExample1 from './examples/chip_example_1.txt';
 import CheckboxExample1 from './examples/checkbox_example_1.txt';
 import DatePickerExample1 from './examples/datepicker_example_1.txt';
 import DialogExample1 from './examples/dialog_example_1.txt';
@@ -38,6 +41,7 @@ import DrawerExample1 from './examples/drawer_example_1.txt';
 import DrodpownExample1 from './examples/dropdown_example_1.txt';
 import FontIconExample1 from './examples/font_icon_example_1.txt';
 import InputExample1 from './examples/input_example_1.txt';
+import LayoutExample1 from './examples/layout_example_1.txt';
 import LinkExample1 from './examples/link_example_1.txt';
 import ListExample1 from './examples/list_example_1.txt';
 import MenuExample1 from './examples/menu_example_1.txt';
@@ -83,6 +87,12 @@ export default {
     path: '/components/card',
     examples: [CardExample1]
   },
+  chip: {
+    name: 'Chip',
+    docs: Chip,
+    path: '/components/chip',
+    examples: [ChipExample1]
+  },
   checkbox: {
     name: 'Checkbox',
     docs: Checkbox,
@@ -124,6 +134,12 @@ export default {
     docs: Input,
     path: '/components/input',
     examples: [InputExample1]
+  },
+  layout: {
+    name: 'Layout',
+    docs: Layout,
+    path: '/components/layout',
+    examples: [LayoutExample1]
   },
   link: {
     name: 'Link',

@@ -30,14 +30,7 @@
 }
 
 .value {
-  display: inline-block;
-  padding: $autocomplete-value-padding;
   margin: $autocomplete-value-margin;
-  font-size: $font-size-tiny;
-  color: $autocomplete-color-primary-contrast;
-  cursor: pointer;
-  background-color: $autocomplete-color-primary;
-  border-radius: $autocomplete-value-border-radius;
 }
 
 .suggestions {
@@ -79,6 +72,7 @@
     right: $input-chevron-offset;
     width: 0;
     height: 0;
+    pointer-events: none;
     content: "";
     border-top: $size solid $input-text-bottom-border-color;
     border-right: $border;

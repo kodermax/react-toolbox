@@ -24,10 +24,12 @@ class TimePickerTest extends React.Component {
 
 ## Properties
 
-| Name          | Type    | Default         | Description|
+| Name            | Type        | Default     | Description|
 |:-----|:-----|:-----|:-----|
-| `className`         | `String`        |             | This class will be placed at the top of the `TimePickerDialog` component so you can provide custom styles.|
-| `format`    | `String`  | `24hr`          | Format to display the clock. It can be `24hr` or `ampm`.|
-| `label`         | `String`        |             | The text string to use for the floating label element in the input component.|
-| `onChange`       | `Function`       |                | Callback called when the picker value is changed.|
-| `value`     | `Date`    |   | Datetime object with currrently selected time |
+| `className`     | `String`    |             | This class will be placed at the top of the `TimePickerDialog` component so you can provide custom styles.|
+| `error`         | `String`    |             | Provide error text which will be displayed under the field.|
+| `inputClassName`| `String`        |         | This class will be applied to `Input` component of `TimePicker`. |
+| `format`        | `String`    | `24hr`      | Format to display the clock. It can be `24hr` or `ampm`.|
+| `label`         | `String`    |             | The text string to use for the floating label element in the input component.|
+| `onChange`      | `Function`  |             | Callback called when the picker value is changed.|
+| `value`         | `Date`      |             | Datetime object with currrently selected time. |

@@ -1,11 +1,11 @@
 import './utils/polyfills'; // Import polyfills for IE11
-export App from './app';
 export AppBar from './app_bar';
 export Autocomplete from './autocomplete';
 export Avatar from './avatar';
 export Button from './button/Button';
 export IconButton from './button/IconButton';
 export * from './card';
+export Chip from './chip';
 export Checkbox from './checkbox';
 export DatePicker from './date_picker';
 export Dialog from './dialog';
@@ -14,6 +14,7 @@ export Dropdown from './dropdown';
 export FontIcon from './font_icon';
 export Form from './form';
 export Input from './input';
+export { Layout, NavDrawer, Panel, Sidebar } from './layout';
 export Link from './link';
 export List from './list/List';
 export ListItem from './list/ListItem';
