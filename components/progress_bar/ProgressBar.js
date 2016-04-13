@@ -77,15 +77,12 @@ class ProgressBar extends React.Component {
 
     return (
       <div>
-        {this.props.status !== 'hide' ?
-          <div
-            data-react-toolbox='progress-bar'
-            aria-valuenow={this.props.value}
-            aria-valuemin={this.props.min}
-            aria-valuemax={this.props.max}
-            className={className}
-          >
-            {this.props.type === 'circular' ? this.renderCircular() : this.renderLinear()}
+        {this.props.status !== 'hide'
+          ? <div data-react-toolbox='progress-bar' aria-valuenow={this.props.value} aria-valuemin={this.props.min}
+              aria-valuemax={this.props.max}
+              className={className}
+            >
+              {this.props.type === 'circular' ? this.renderCircular() : this.renderLinear()}
           </div> : undefined}
       </div>
     );

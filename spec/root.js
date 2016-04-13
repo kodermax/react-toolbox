@@ -44,7 +44,6 @@ const Root = () => (
         onClick={_hrefProject}
       />
     </AppBarToolbox>
-
     <Autocomplete />
     <Autosuggest />
     <Avatar />
