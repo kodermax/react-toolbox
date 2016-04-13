@@ -128,8 +128,9 @@ class Dropdown extends React.Component {
     }, this.props.className);
 
     return (
-      <div data-react-toolbox='dropdown' className={className} {...others}>
+      <div data-react-toolbox='dropdown' className={className}>
         <Input
+          {...others}
           className={style.value}
           onMouseDown={this.handleMouseDown}
           readOnly
