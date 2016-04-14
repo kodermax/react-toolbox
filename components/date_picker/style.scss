@@ -58,4 +58,7 @@
       background: $datepicker-primary-hover-color;
     }
   }
+  *, :after, :before {
+    box-sizing: border-box;
+  }
 }
