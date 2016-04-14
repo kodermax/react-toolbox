@@ -1,6 +1,6 @@
 {
   "name": "russian-react-toolbox",
-  "version": "1.0.53",
+  "version": "1.0.55",
   "description": "Русский модуль React-Toolbox",
   "author": "kodermax",
   "license": "MIT",
@@ -29,9 +29,9 @@
   "typings": "./react-toolbox.d.ts",
   "peerDependencies": {
     "classnames": "^2.2.0",
-    "react": "^0.14",
-    "react-dom": "^0.14.0",
-    "react-addons-css-transition-group": "^0.14.0",
+    "react": "^15.0",
+    "react-dom": "^15.0",
+    "react-addons-css-transition-group": "^15.0",
     "normalize.css": "^3.0.3"
   },
   "dependencies": {

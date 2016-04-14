@@ -41,7 +41,7 @@ class DatePicker extends React.Component {
   render () {
     const { inputClassName, value } = this.props;
     const inputFormat = this.props.inputFormat || time.formatDate;
-    const date = value ? inputFormat(value) : null;
+    const date = value ? inputFormat(value) : '';
 
     return (
       <div data-react-toolbox='date-picker'>
