@@ -2,14 +2,11 @@ import React from 'react';
 import {IconButton} from '../button';
 import Dropdown from '../dropdown';
 import style from './style';
-const limits = [
-  {value: 10, label: '10'},
-  {value: 20, label: '20'},
-  {value: 50, label: '50'}
-];
+
 export default class Pagination extends React.Component {
   static propTypes = {
     limit: React.PropTypes.number.isRequired,
+    limits: React.PropTypes.object,
     onChangeLimit: React.PropTypes.func,
     onPageClick: React.PropTypes.func,
     page: React.PropTypes.number.isRequired,
@@ -28,6 +25,7 @@ export default class Pagination extends React.Component {
   };
   render () {
     const {
+      limits,
       page,
       total
     } = this.props;
@@ -42,8 +40,8 @@ export default class Pagination extends React.Component {
         <span>{Math.min((page * this.state.limit - this.state.limit + 1), total) + '-' + Math.min((page * this.state.limit), total) + ' из ' + total}</span>
         <span>На странице: </span>
         <Dropdown className={style.dropdown} auto={false} onChange={this.handleChangeLimit}
-                  source={limits}
-                  value={this.state.limit}
+          source={limits}
+          value={this.state.limit}
         />
       </div>
     );

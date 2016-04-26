@@ -32,6 +32,11 @@ const UserModel = {
     type: String,
   },
 };
+const pageLimits = [
+  {value: 100, label: '100'},
+  {value: 200, label: '200'},
+  {value: 500, label: '500'},
+];
 
 const users = [
   {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
@@ -80,8 +85,7 @@ class TableTest extends React.Component {
           source={this.state.source}
         />
         <Pagination page={1} limit={10} total={5}
-          onChangeLimit={this.handleChangeLimit}
-          onPageClick={this.handlePageClick}
+          onChangeLimit={this.handleChangeLimit} limits={pageLimits} onPageClick={this.handlePageClick}
         />
       </section>
     );
