@@ -6,7 +6,7 @@ import style from './style';
 export default class Pagination extends React.Component {
   static propTypes = {
     limit: React.PropTypes.number.isRequired,
-    limits: React.PropTypes.object,
+    limits: React.PropTypes.oneOfType([React.PropTypes.object, React.PropTypes.array]),
     onChangeLimit: React.PropTypes.func,
     onPageClick: React.PropTypes.func,
     page: React.PropTypes.number.isRequired,
