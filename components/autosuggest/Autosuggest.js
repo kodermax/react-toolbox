@@ -101,6 +101,7 @@ export default class Autosuggest extends React.Component {
     for (const item of this.props.source) {
       if (item.id === this.props.value.id) return item;
     }
+    return {value: ''};
   };
   render () {
     const {error, label, ...other} = this.props;
