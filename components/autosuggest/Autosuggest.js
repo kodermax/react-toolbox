@@ -28,7 +28,7 @@ export default class Autosuggest extends React.Component {
   state = {
     direction: this.props.direction,
     focus: false,
-    query: ''
+    query: this.props.value
   };
 
   handleSuggestionHover = (key) => {
@@ -97,15 +97,8 @@ export default class Autosuggest extends React.Component {
       this.setState({active: suggestionsKeys[index]});
     }
   };
-  getSelectedItem = () => {
-    for (const item of this.props.source) {
-      if (item.id === this.props.value.id) return item;
-    }
-    return {value: ''};
-  };
   render () {
     const {error, label, ...other} = this.props;
-    const selected = this.getSelectedItem();
     const className = ClassNames(style.root, {
       [style.focus]: this.state.focus
     }, this.props.className);
@@ -122,7 +115,7 @@ export default class Autosuggest extends React.Component {
           onChange={this.handleQueryChange}
           onFocus={this.handleQueryFocus}
           onKeyUp={this.handleQueryKeyUp}
-          value={selected && selected.value}
+          value={this.state.query}
         />
         {this.renderSuggestions()}
       </div>
