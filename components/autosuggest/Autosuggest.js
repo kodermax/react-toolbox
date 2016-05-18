@@ -80,6 +80,7 @@ export default class Autosuggest extends React.Component {
   };
   handleQueryChange = (value) => {
     if (this.props.onChange) this.props.onChange(value);
+    this.setState({query: value});
   };
   handleQueryFocus = () => {
     this.refs.suggestions.scrollTop = 0;
