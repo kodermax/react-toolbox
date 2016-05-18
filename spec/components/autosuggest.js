@@ -21,9 +21,10 @@ class AutosuggestTest extends React.Component {
   };
   handleChange = (query) => {
     this.fetchData(query);
+    this.setState({user : query});
   };
   handleSelect = (key, value) => {
-    this.setState({user :value});
+    this.setState({user :value.value});
   };
   customUser = (item) => {
     const containerStyle = {

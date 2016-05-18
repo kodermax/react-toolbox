@@ -30,10 +30,13 @@ export default class Autosuggest extends React.Component {
     focus: false,
     query: this.props.value
   };
-
+  componentWillReceiveProps (nextProps) {
+    this.setState({query: nextProps.value});
+  }
   handleSuggestionHover = (key) => {
     this.setState({active: key});
   };
+
   select (key, event) {
     events.pauseEvent(event);
     this.handleSelect(key, event);
@@ -77,7 +80,6 @@ export default class Autosuggest extends React.Component {
   };
   handleQueryChange = (value) => {
     if (this.props.onChange) this.props.onChange(value);
-    this.setState({query: value});
   };
   handleQueryFocus = () => {
     this.refs.suggestions.scrollTop = 0;
