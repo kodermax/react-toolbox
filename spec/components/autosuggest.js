@@ -1,13 +1,10 @@
 import React from 'react';
 import Autosuggest from '../../components/autosuggest';
 import $ from 'jquery';
-const usersObject = {
-  '123': {'value':'Javi Velasco','position':'UI Developer', 'img':'https://avatars2.githubusercontent.com/u/1634922?v=3&s=48'},
-  '321': {'value': 'Javi Jiménez', 'position':'Director', 'img':'https://avatars2.githubusercontent.com/u/559654?v=3&s=460'}
-};
+const usersObject = [{"id":"1555","img":"","position":"\u0412\u0435\u0434\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442 1\u0421","value":"test user"},{"id":"1642","img":null,"position":"\u0412\u0435\u0434\u0443\u0449\u0438\u0439 \u0431\u0438\u0437\u043d\u0435\u0441-\u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a","value":"Max Payn"},{"id":"1861","img":null,"position":"","value":"Alex Payn"}];
 class AutosuggestTest extends React.Component {
   state = {
-    user: '321'
+    user: usersObject[0]
   };
 
   componentDidMount(){
@@ -25,7 +22,7 @@ class AutosuggestTest extends React.Component {
     this.fetchData(query);
   };
   handleSelect = (key, value) => {
-    console.log(value);
+    this.state.user = value;
   };
   customUser = (item) => {
     const containerStyle = {
@@ -72,7 +69,8 @@ class AutosuggestTest extends React.Component {
           onChange={this.handleChange}
           onFocus={this.handleQueryFocus}
           onSelectItem={this.handleSelect}
-          source={this.state.usersObject}
+          source={usersObject}
+          value={this.state.user}
           template={this.customUser}
         />
       </section>
