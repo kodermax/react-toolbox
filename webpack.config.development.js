@@ -1,4 +1,4 @@
-const pkg = require('./package');
+const pkg = require('./package.old');
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');

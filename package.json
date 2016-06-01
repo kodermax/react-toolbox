@@ -1,37 +1,10 @@
 {
-  "name": "russian-react-toolbox",
-  "version": "1.0.62",
-  "description": "Русский модуль React-Toolbox",
-  "author": "kodermax",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kodermax/russian-react-toolbox/issues"
-  },
-  "homepage": "https://github.com/kodermax/russian-react-toolbox#readme",
+  "name": "react-biz",
+  "version": "1.0.0",
+  "description": "React components for Business",
   "main": "./lib",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
-    "lint": "eslint ./ --ext .js,.jsx",
-    "babel": "babel ./components --out-dir ./lib",
-    "sass": "cpx './components/**/*.scss' ./lib",
-    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
-    "clean": "rimraf ./lib",
-    "prebuild": "npm run clean",
-    "prepublish": "npm run build",
-    "test": "cross-env NODE_ENV=test karma start",
-    "test:watch": "cross-env NODE_ENV=test karma start --no-single-run",
-    "release": "npm run prebuild && npm run build && npm version patch && npm publish",
-    "patch": "bumped release patch"
-  },
   "directories": {
     "doc": "docs"
-  },
-  "typings": "./react-toolbox.d.ts",
-  "peerDependencies": {
-    "classnames": "^2.2.0",
-    "react": "^15.0",
-    "react-dom": "^15.0",
-    "react-addons-css-transition-group": "^15.0"
   },
   "dependencies": {
     "classnames": "^2.2.1"
@@ -89,15 +62,35 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
   },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
+    "lint": "eslint ./ --ext .js,.jsx",
+    "babel": "babel ./components --out-dir ./lib",
+    "sass": "cpx './components/**/*.scss' ./lib",
+    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
+    "clean": "rimraf ./lib",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "test": "cross-env NODE_ENV=test karma start",
+    "test:watch": "cross-env NODE_ENV=test karma start --no-single-run",
+    "release": "npm run prebuild && npm run build && npm version patch && npm publish",
+    "patch": "bumped release patch"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kodermax/russian-react-toolbox.git"
+    "url": "git+https://github.com/rebiz/react-biz.git"
   },
   "keywords": [
-    "russian",
     "react",
+    "business",
+    "components",
     "material",
-    "elements",
-    "business"
-  ]
+    "design"
+  ],
+  "author": "kodermax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rebiz/react-biz/issues"
+  },
+  "homepage": "https://github.com/rebiz/react-biz#readme"
 }
