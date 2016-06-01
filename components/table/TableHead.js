@@ -3,7 +3,7 @@ import FontIcon from '../font_icon';
 import Checkbox from '../checkbox';
 import style from './style';
 
-const TableHead = ({model, onSelect, onSort, selectable, selected}) => {
+const TableHead = ({model, onSelect, onSort, selectable, multiSelectable, selected}) => {
   let selectCell;
   const contentCells = Object.keys(model).map((key) => {
     if (model[key].sortable) {
@@ -19,17 +19,20 @@ const TableHead = ({model, onSelect, onSort, selectable, selected}) => {
     }
   });
 
-  if (selectable) {
+  if (selectable && multiSelectable) {
     selectCell = (
       <th key='select' className={style.selectable}>
-        <Checkbox onChange={onSelect} checked={selected} />
+        <Checkbox onChange={onSelect} checked={selected}/>
       </th>
     );
+  } else if (selectable) {
+    selectCell = (
+      <th key='select' className={style.selectable}></th>
+    );
   }
-
   return (
     <thead>
-      <tr>{[selectCell, ...contentCells]}</tr>
+    <tr>{[selectCell, ...contentCells]}</tr>
     </thead>
   );
 };
@@ -39,6 +42,7 @@ TableHead.propTypes = {
   model: React.PropTypes.object,
   onSelect: React.PropTypes.func,
   selectable: React.PropTypes.bool,
+  multiSelectable: React.PropTypes.bool,
   onSort: React.PropTypes.func,
   selected: React.PropTypes.bool
 };

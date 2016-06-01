@@ -1,14 +1,18 @@
 @import "../base";
-@import "../mixins";
 @import "./config";
 
 .chip {
+  position: relative;
   display: inline-block;
+  max-width: 100%;
   padding: 0 $chip-padding;
   margin-right: $chip-margin-right;
+  overflow: hidden;
   font-size: $chip-font-size;
   line-height: $chip-height;
   color: $chip-color;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   background-color: $chip-background;
   border-radius: $chip-height;
   > *, :after, :before {
@@ -40,6 +44,7 @@
 
 .delete {
   position: absolute;
+  right: 0;
   display: inline-block;
   width: $chip-remove-size;
   height: $chip-remove-size;

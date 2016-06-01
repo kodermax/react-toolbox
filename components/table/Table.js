@@ -8,6 +8,7 @@ class Table extends React.Component {
     className: React.PropTypes.string,
     heading: React.PropTypes.bool,
     model: React.PropTypes.object,
+    multiSelectable: React.PropTypes.bool,
     onChange: React.PropTypes.func,
     onSelect: React.PropTypes.func,
     onSort: React.PropTypes.func,
@@ -20,6 +21,7 @@ class Table extends React.Component {
     className: '',
     heading: true,
     selectable: true,
+    multiSelectable: true,
     selected: [],
     source: []
   };
@@ -40,8 +42,13 @@ class Table extends React.Component {
   handleRowSelect = (index) => {
     if (this.props.onSelect) {
       const position = this.props.selected.indexOf(index);
-      const newSelected = [...this.props.selected];
-      if (position !== -1) newSelected.splice(position, 1); else newSelected.push(index);
+      let newSelected = [...this.props.selected];
+      if (position !== -1) { newSelected.splice(position, 1); }
+      if (position !== -1 && this.props.multiSelectable) {
+        newSelected.push(index);
+      } else {
+        newSelected = [index];
+      }
       this.props.onSelect(newSelected);
     }
   };
@@ -54,7 +61,7 @@ class Table extends React.Component {
 
   renderHead () {
     if (this.props.heading) {
-      const {model, selected, source, selectable} = this.props;
+      const {model, selected, source, selectable, multiSelectable} = this.props;
       const isSelected = selected.length === source.length;
       return (
         <TableHead
@@ -62,6 +69,7 @@ class Table extends React.Component {
           onSelect={this.handleFullSelect}
           onSort={this.handleSort}
           selectable={selectable}
+          multiSelectable={multiSelectable}
           selected={isSelected}
         />
       );
