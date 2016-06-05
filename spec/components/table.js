@@ -1,48 +1,18 @@
 import React from 'react';
 import Table from '../../components/table';
-import Pagination from '../../components/pagination';
 
 const UserModel = {
-  id: {
-    title: 'ID',
-    sortable: true,
-    sort: 'desc',
-    type: String,
-  },
-  title: {
-    title: 'Заголовок',
-    type: String,
-    crop: true,
-    width: '200px',
-  },
-  createdBy: {
-    title: 'Кто создал',
-    type: String,
-  },
-  changedBy: {
-    title: 'Кто изменил',
-    type: String,
-  },
-  messages: {
-    title: 'Сооб.',
-    type: String,
-  },
-  status: {
-    title: 'Статус заявки',
-    type: String,
-  },
+  name: {type: String},
+  twitter: {type: String, title: '@twitter'},
+  birthdate: {type: Date},
+  cats: {type: Number, onChange (...args) { console.log('changes:', ...args); } },
+  dogs: {type: Number},
+  owner: {type: Boolean }
 };
-const pageLimits = [
-  {value: 100, label: '100'},
-  {value: 200, label: '200'},
-  {value: 500, label: '500'},
-];
 
 const users = [
-  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
-  {id:  123, title: 'Бессознательное вызывает контраст, это обозначено Ли Россом как фундаментальная ошибка атрибуции, которая прослеживается во многих экспериментах.',
-    createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
-  {id:  123, title: '@soyjavi', createdBy:'Максим', changedBy: 'Максим', messages: 10, status: 'Готово'},
+  {name: 'Javi Jimenez', twitter: '@soyjavi', birthdate: new Date(1980, 3, 11), cats: 1},
+  {name: 'Javi Velasco', twitter: '@javivelasco', birthdate: new Date(1987, 1, 1), dogs: 1, owner: true}
 ];
 
 class TableTest extends React.Component {
@@ -60,15 +30,6 @@ class TableTest extends React.Component {
   handleSelect = (selected) => {
     this.setState({selected});
   };
-  handleSort = (key) => {
-    console.log(key)
-  };
-  handlePageClick = (page) => {
-    console.log(page);
-  };
-  handleChangeLimit = (value) => {
-    console.log(value);
-  };
 
   render () {
     return (
@@ -79,13 +40,9 @@ class TableTest extends React.Component {
           model={UserModel}
           onChange={this.handleChange}
           onSelect={this.handleSelect}
-          onSort={this.handleSort}
           selectable
           selected={this.state.selected}
           source={this.state.source}
-        />
-        <Pagination page={1} limit={10} total={5}
-          onChangeLimit={this.handleChangeLimit} limits={pageLimits} onPageClick={this.handlePageClick}
         />
       </section>
     );

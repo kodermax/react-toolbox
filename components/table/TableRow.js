@@ -43,7 +43,18 @@ const factory = (Checkbox) => {
     }
 
     renderCell (key) {
-      return (<div className={this.props.model[key].crop ? style.crop : undefined}>{this.props.data[key]}</div>);
+      const value = this.props.data[key];
+
+      // if the value is a valid React element return it directly, since it
+      // cannot be edited and should not be converted to a string...
+      if (React.isValidElement(value)) { return value; }
+
+      const onChange = this.props.model[key].onChange || this.props.onChange;
+      if (onChange) {
+        return this.renderInput(key, value);
+      } else if (value) {
+        return value.toString();
+      }
     }
 
     renderInput (key, value) {
@@ -69,8 +80,8 @@ const factory = (Checkbox) => {
 
       return (
         <tr data-react-toolbox-table='row' className={className}>
-          {this.renderSelectCell()}
-          {this.renderCells()}
+            {this.renderSelectCell()}
+            {this.renderCells()}
         </tr>
       );
     }

@@ -50,7 +50,7 @@ class PickersTest extends React.Component {
 
         <DatePicker
           label='Auto Picker'
-          autoOk={true}
+          autoOk
           onChange={this.handleChange.bind(this, 'date4')}
           value={this.state.date4}
         />

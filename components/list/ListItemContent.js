@@ -38,8 +38,8 @@ const factory = (ListItemText) => {
       return (
         <span className={className}>
           {caption && <ListItemText primary>{caption}</ListItemText>}
-          {legend && <ListItemText>{legend}</ListItemText>}
-          {children}
+              {legend && <ListItemText>{legend}</ListItemText>}
+              {children}
         </span>
       );
     }
@@ -50,3 +50,5 @@ const factory = (ListItemText) => {
 
 const ListItemContent = themr(LIST)(InjectListItemText);
 export default ListItemContent;
+export { factory as listItemContentFactory };
+export { ListItemContent };

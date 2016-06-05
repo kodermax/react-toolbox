@@ -66,7 +66,7 @@ const factory = (ripple, FontIcon) => {
     };
 
   render () {
-    const { accent, children, className, colorIcon, flat, floating, href, icon,
+    const { accent, children, className, flat, floating, href, icon,
             inverse, label, mini, neutral, primary, theme, raised, ...others} = this.props;
     const element = href ? 'a' : 'button';
     const level = primary ? 'primary' : accent ? 'accent' : 'neutral';
