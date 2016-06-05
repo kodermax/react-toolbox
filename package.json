@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "dependencies": {
-    "classnames": "^2.2.1"
+    "classnames": "^2.2.1",
+    "react-css-themr": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.2.1",
