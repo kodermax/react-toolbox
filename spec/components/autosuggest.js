@@ -1,6 +1,5 @@
 import React from 'react';
 import Autosuggest from '../../components/autosuggest';
-import $ from 'jquery';
 const usersObject = [
   {
     'id': '1555',
@@ -31,7 +30,7 @@ class AutosuggestTest extends React.Component {
   }
 
   fetchData = () => {
-    this.setState({usersObject: usersObject});
+    this.setState({users: usersObject});
   };
   handleChange = (query) => {
     this.fetchData(query);
@@ -61,12 +60,12 @@ class AutosuggestTest extends React.Component {
       flexGrow: 2
     };
     const positionStyle = {
-      fontSize: '11px',
+      fontSize: '11px'
     };
 
     return (
       <div style={containerStyle}>
-           {item.img ? <img src={'http://dev.pharm.local/' + item.img} style={imageStyle}/> : '' }
+           {item.img ? <img src={'http://dev.pharm.local/' + item.img} style={imageStyle}/> : ''}
              <div style={contentStyle}>
                <span>{item.value}</span>
                <span style={positionStyle}>{item.position}</span>
@@ -75,7 +74,7 @@ class AutosuggestTest extends React.Component {
     );
   };
 
-  render() {
+  render () {
     return (
       <section>
         <h5>Autosuggest</h5>
@@ -85,7 +84,7 @@ class AutosuggestTest extends React.Component {
           onChange={this.handleChange}
           onFocus={this.handleQueryFocus}
           onSelectItem={this.handleSelect}
-          source={this.state.usersObject}
+          source={this.state.users}
           value={this.state.user}
           template={this.customUser}
         />

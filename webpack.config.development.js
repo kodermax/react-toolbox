@@ -26,9 +26,9 @@ module.exports = {
         //Eslint loader
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
-        include: [path.resolve(__dirname, "components")],
-        exclude: /node_modules/,
-      },
+        include: [path.resolve(__dirname, 'components')],
+        exclude: /node_modules/
+      }
     ],
     loaders: [
       {
