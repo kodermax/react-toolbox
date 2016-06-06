@@ -6,7 +6,7 @@ const FontIconTest = () => (
     <h2>Font Icon</h2>
     <p>lorem ipsum...</p>
 
-    <FontIcon value="add"/>
+    <FontIcon colorIcon="red" value="add"/>
     <FontIcon value="access_alarm"/>
     <FontIcon value="explore"/>
     <FontIcon value="zoom_in"/>

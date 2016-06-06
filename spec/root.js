@@ -15,6 +15,7 @@ import Drawer from './components/drawer';
 import Dropdown from './components/dropdown';
 import IconMenu from './components/icon_menu';
 import Input from './components/input';
+import FontIcon from './components/font_icon';
 import Layout from './components/layout';
 import List from './components/list';
 import Menu from './components/menu';
@@ -53,6 +54,7 @@ const Root = () => (
     <Dropdown />
     <IconMenu />
     <Input />
+    <FontIcon />
     <Layout />
     <List />
     <Menu />

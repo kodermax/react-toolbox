@@ -11,6 +11,7 @@ const factory = (ripple, FontIcon) => {
       accent: PropTypes.bool,
       children: PropTypes.node,
       className: PropTypes.string,
+      colorIcon: PropTypes.string,
       disabled: PropTypes.bool,
       flat: PropTypes.bool,
       floating: PropTypes.bool,
@@ -66,7 +67,7 @@ const factory = (ripple, FontIcon) => {
     };
 
   render () {
-    const { accent, children, className, flat, floating, href, icon,
+    const { accent, children, className, colorIcon, flat, floating, href, icon,
             inverse, label, mini, neutral, primary, theme, raised, ...others} = this.props;
     const element = href ? 'a' : 'button';
     const level = primary ? 'primary' : accent ? 'accent' : 'neutral';
@@ -90,7 +91,7 @@ const factory = (ripple, FontIcon) => {
       };
 
       return React.createElement(element, props,
-        icon ? <FontIcon className={theme.icon} value={icon}/> : null,
+        icon ? <FontIcon className={theme.icon} colorIcon={colorIcon} value={icon}/> : null,
         label,
         children
       );
