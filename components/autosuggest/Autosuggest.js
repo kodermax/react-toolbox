@@ -91,7 +91,7 @@ export default class Autosuggest extends React.Component {
   };
   handleQueryKeyUp = (event) => {
     if (event.which === 13 && this.state.active >= 0) this.select(this.state.active, event);
-    if (event.which === 27) this.refs.input.blur();
+    if (event.which === 27) ReactDOM.findDOMNode(this).querySelector('input').blur();
     if ([40, 38].indexOf(event.which) !== -1) {
       const suggestionsKeys = [...this.suggestions().keys()];
       let index = suggestionsKeys.indexOf(this.state.active) + (event.which === 40 ? +1 : -1);
