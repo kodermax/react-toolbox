@@ -106,6 +106,7 @@ const factory = (Input) => {
       if (!this.props.allowBlank) {
         return this.props.source[0];
       }
+      return '';
     };
 
     renderTemplateValue (selected) {
