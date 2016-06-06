@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ClassNames from 'classnames';
 import Input from '../input';
 import style from './style';
@@ -76,7 +77,7 @@ export default class Autosuggest extends React.Component {
   handleSelect = (key) => {
     const query = this.getItem(key);
     if (this.props.onSelectItem) this.props.onSelectItem(key, query);
-    this.setState({ focus: false}, () => { this.refs.input.blur(); });
+    this.setState({ focus: false}, () => { ReactDOM.findDOMNode(this).querySelector('input').blur(); });
   };
   handleQueryChange = (value) => {
     if (this.props.onChange) this.props.onChange(value);

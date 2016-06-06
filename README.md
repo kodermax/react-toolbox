@@ -1,7 +1,7 @@
-# Russian React Toolbox
+# React Biz
 
-[![npm version](https://img.shields.io/npm/v/russian-react-toolbox.svg?style=flat-square)](https://www.npmjs.com/package/russian-react-toolbox)
-[![NPM Status](http://img.shields.io/npm/dm/russian-react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/russian-react-toolbox)
+[![npm version](https://img.shields.io/npm/v/react-biz.svg?style=flat-square)](https://www.npmjs.com/package/react-biz)
+[![NPM Status](http://img.shields.io/npm/dm/react-biz.svg?style=flat-square)](https://www.npmjs.org/package/react-biz)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kodermax)
 
 Этот проект делается для бизнес-приложений.
@@ -12,21 +12,21 @@
 
 ## Installation
 
-React Toolbox can be installed as an [npm package](https://www.npmjs.org/package/react-toolbox);
+React Biz can be installed as an [npm package](https://www.npmjs.org/package/react-biz);
 
 ```
-npm install --save russian-react-toolbox
+npm install --save react-biz
 ```
 
 ## Usage
 
-Although there are other ways to use React Toolbox, the recommended way is to create a webpack workflow with [babel-loader](https://github.com/babel/babel-loader), [css-loader](https://github.com/webpack/css-loader) and [sass-loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
+Although there are other ways to use React Biz, the recommended way is to create a webpack workflow with [babel-loader](https://github.com/babel/babel-loader), [css-loader](https://github.com/webpack/css-loader) and [sass-loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
 
 Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
 import React from 'react';
-import Button from 'react-toolbox/lib/button';
+import Button from 'react-biz/lib/button';
 
 const CustomButton = () => (
   <Button label="Hello world" raised accent />
@@ -60,39 +60,4 @@ ReactDOM.render(
 , document.getElementById('app'));
 
 ```
-
-## Customization
-
-Since React Toolbox styles are written in CSS, it's pretty easy to customize your components. We have several ways:
-
-### Via React Toolbox Loader
-
-Thanks to the power of SASS, all components in React Toolbox are configured from a variables file. The best way to customize your build is to create a custom configuration SASS file overriding configuration variables like colors or sizes.
-
-With [toolbox-loader](https://github.com/react-toolbox/toolbox-loader) you can tell webpack where your configuration file is and it will prepend your config to each SASS build. This will result in your customized CSS for React Toolbox Components. For now you can browse the configuration files and override what you want. 
-
-### Via `className` property
-
-Generally each component will have a `className` prop so you can pass the class name you want to keep in the root node of the resulting markup. All markup is styled with the lowest specificity level so you can just nest one level in your CSS and the result will be applied. Consider this example:
-
-```jsx
-const CustomButton = () => (
-  <Button className='customized' label='Custom button' />
-);
-```
-
-If you browse the resulting markup you will see *data attributes* like `data-react-toolbox="label"` so you can avoid directly styling tag names. You can now write your CSS:
-
-```css
-.customized > [data-react-toolbox="label"] {
-  color: green;
-  font-weight: bold;
-}
-```
-
-## TypeScript
-
-A TypeScript definition file `react-toolbox.d.ts` is available. It is referenced in `package.json` and should be picked up by the TypeScript compiler when importing from the npm package.
-
-Note that to comply with the typings requirement, a triple-slash reference to `react.d.ts` is *NOT included*. You will need to reference [react.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/react/react.d.ts) somewhere in your project.
 

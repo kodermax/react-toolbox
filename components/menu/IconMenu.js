@@ -40,7 +40,7 @@ const factory = (IconButton, Menu) => {
 
     state = {
       active: false
-    }
+    };
 
     handleButtonClick = (event) => {
       this.setState({ active: !this.state.active });
