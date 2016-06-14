@@ -5,6 +5,7 @@ import AppBar from '../components/app_bar';
 import Autocomplete from './components/autocomplete';
 import Avatar from './components/avatar';
 import Autosuggest from './components/autosuggest';
+import Badge from './components/badge';
 import Button from './components/button';
 import ButtonToolbox from '../components/button';
 import Card from './components/card';
@@ -45,6 +46,7 @@ const Root = () => (
     <Autocomplete />
     <Autosuggest />
     <Avatar />
+    <Badge />
     <Button />
     <Card />
     <Checkbox />
