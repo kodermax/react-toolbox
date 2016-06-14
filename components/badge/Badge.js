@@ -16,6 +16,7 @@ const Badge = ({ badgeStyle, theme, ...props }) => {
 };
 
 Badge.propTypes = {
+  badgeContent: PropTypes.node.isRequired,
   badgeStyle: PropTypes.object,
   children: PropTypes.node,
   className: PropTypes.string,
