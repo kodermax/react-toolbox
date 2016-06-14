@@ -12,7 +12,7 @@
   background: $color-divider;
   &.indeterminate .value {
     transform-origin: center center;
-    animation: linear-indeterminate-bar 1s linear infinite;
+    animation: linear-indeterminate-bar 1s linear infinite
   }
 }
 
