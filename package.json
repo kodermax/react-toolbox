@@ -1,6 +1,6 @@
 {
   "name": "react-biz",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React components for Business",
   "main": "./lib",
   "directories": {
