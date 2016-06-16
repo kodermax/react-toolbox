@@ -25,7 +25,7 @@ const factory = (MenuItem) => {
       onSelect: PropTypes.func,
       onShow: PropTypes.func,
       outline: PropTypes.bool,
-      position: PropTypes.string,
+      position: PropTypes.oneOf(Object.keys(POSITION).map(key => POSITION[key])),
       ripple: PropTypes.bool,
       selectable: PropTypes.bool,
       selected: PropTypes.any,
@@ -121,10 +121,11 @@ const factory = (MenuItem) => {
       }
     };
 
-    handleSelect = (item) => {
+    handleSelect = (item, event) => {
       const { value, onClick } = item.props;
+      if (onClick) event.persist();
       this.setState({ active: false, rippled: this.props.ripple }, () => {
-        if (onClick) onClick();
+        if (onClick) onClick(event);
         if (this.props.onSelect) this.props.onSelect(value);
       });
     };
