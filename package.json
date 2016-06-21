@@ -1,6 +1,6 @@
 {
   "name": "react-biz",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "React components for Business",
   "main": "./lib",
   "directories": {
@@ -46,6 +46,7 @@
     "node-sass": "^3.4.2",
     "phantomjs": "^2.1.7",
     "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.0.1",
     "react-docgen": "^2.4.0",
