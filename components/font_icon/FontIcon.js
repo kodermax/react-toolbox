@@ -4,7 +4,7 @@ import classnames from 'classnames';
 const FontIcon = ({ children, className, colorIcon, value, ...other}) => (
   <span
     data-react-toolbox='font-icon'
-    className={classnames({'material-icons': typeof value === 'string'}, className)}
+    className={classnames({'material-icons': typeof value === 'string' || typeof children === 'string'}, className)}
     {...other}
   >
     {colorIcon ? <span style={{color: colorIcon}}> {value} </span> : value}
