@@ -5,6 +5,7 @@ export const BADGE = 'RTBadge';
 export const BUTTON = 'RTButton';
 export const CARD = 'RTCard';
 export const CHIP = 'RTChip';
+export const CHECKBOX = 'RTCheckbox';
 export const DATE_PICKER = 'RTDatePicker';
 export const DIALOG = 'RTDialog';
 export const DROPDOWN = 'RTDropdown';
