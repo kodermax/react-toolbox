@@ -7,12 +7,13 @@ const UserModel = {
   birthdate: {type: Date},
   cats: {type: Number, onChange (...args) { console.log('changes:', ...args); } },
   dogs: {type: Number},
-  owner: {type: Boolean }
+  owner: {type: Boolean },
+  messages: {type: String}
 };
 
 const users = [
-  {name: 'Javi Jimenez', twitter: '@soyjavi', birthdate: new Date(1980, 3, 11), cats: 1},
-  {name: 'Javi Velasco', twitter: '@javivelasco', birthdate: new Date(1987, 1, 1), dogs: 1, owner: true}
+  {name: 'Javi Jimenez', twitter: '@soyjavi', birthdate: new Date(1980, 3, 11), cats: 1, messages: 1},
+  {name: 'Javi Velasco', twitter: '@javivelasco', birthdate: new Date(1987, 1, 1), dogs: 1, owner: true, messages: 0}
 ];
 
 class TableTest extends React.Component {
