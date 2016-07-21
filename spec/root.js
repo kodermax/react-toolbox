@@ -25,6 +25,8 @@ import Progress from './components/progress';
 import Radio from './components/radio';
 import Slider from './components/slider';
 import Snackbar from './components/snackbar';
+import Stepper from './components/stepper';
+import SvgIcon from './components/svg_icon';
 import Switch from './components/switch';
 import Table from './components/table';
 import Tabs from './components/tabs';
@@ -65,6 +67,8 @@ const Root = () => (
     <Radio />
     <Slider />
     <Snackbar />
+    <Stepper />
+    <SvgIcon />
     <Switch />
     <Table />
     <Tabs />
