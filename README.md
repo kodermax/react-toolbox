@@ -39,7 +39,7 @@ The previous code creates a React button component based on React Toolbox button
 
 ## Roboto Font and Material Design Icons
 
-React Toolbox assumes that you are importing [Roboto Font](https://www.google.com/fonts/specimen/Roboto) and [Material Design Icons](https://www.google.com/design/icons/).
+React Toolbox assumes that you are importing [Roboto Font](https://fonts.google.com/specimen/Roboto) and [Material Design Icons](https://www.google.com/design/icons/).
 
 In order to import the fonts for you, we'd need to include them in the CSS which is considered a bad practice. If you are not including them in your app, go to the linked sites and follow the instructions. 
 
