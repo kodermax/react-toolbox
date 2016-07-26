@@ -19,7 +19,7 @@ class Day extends Component {
   dayStyle () {
     if (this.props.day === 1) {
       return {
-        marginLeft: `${time.getFirstWeekDay(this.props.viewDate) * 100 / 7}%`
+        marginLeft: `${(time.getFirstWeekDay(this.props.viewDate) - 1) * 100 / 7}%`
       };
     }
   }

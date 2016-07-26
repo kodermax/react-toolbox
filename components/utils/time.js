@@ -81,6 +81,18 @@ const time = {
       case 6: return 'Сб';
     }
   },
+  getRussianShortDayOfWeek (day) {
+    switch (day) {
+      default: return 'Неизвестный';
+      case 0: return 'Пн';
+      case 1: return 'Вт';
+      case 2: return 'Ср';
+      case 3: return 'Чт';
+      case 4: return 'Пт';
+      case 5: return 'Сб';
+      case 6: return 'Вс';
+    }
+  },
 
   clone (d) {
     return new Date(d.getTime());

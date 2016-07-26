@@ -24,7 +24,7 @@ class Month extends Component {
 
   renderWeeks () {
     return utils.range(0, 7).map(i => {
-      return <span key={i}>{time.getFullDayOfWeek(i).charAt(0)}</span>;
+      return <span key={i}>{time.getRussianShortDayOfWeek(i)}</span>;
     });
   }
 

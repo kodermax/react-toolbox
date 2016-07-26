@@ -76,8 +76,8 @@ const factory = (Dialog, Calendar) => {
     }
 
     actions = [
-      { label: 'Cancel', className: this.props.theme.button, onClick: this.props.onDismiss },
-      { label: 'Ok', className: this.props.theme.button, name: this.props.name, onClick: this.handleSelect }
+      { label: 'Отмена', className: this.props.theme.button, onClick: this.props.onDismiss },
+      { label: 'ОК', className: this.props.theme.button, name: this.props.name, onClick: this.handleSelect }
     ];
 
     render () {
