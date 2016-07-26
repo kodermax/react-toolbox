@@ -101,7 +101,7 @@ export default class Autosuggest extends React.Component {
     }
   };
   render () {
-    const {error, label, ...other} = this.props;
+    const {error, label} = this.props;
     const className = ClassNames(style.root, {
       [style.focus]: this.state.focus
     }, this.props.className);
@@ -109,7 +109,6 @@ export default class Autosuggest extends React.Component {
     return (
       <div data-react-toolbox='autosuggest' className={className}>
         <Input
-          {...other}
           ref='input'
           className={style.input}
           error={error}

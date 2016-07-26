@@ -27,6 +27,7 @@ class DialogTest extends React.Component {
         <ContextComponent>
           <Dialog
             actions={this.actions}
+            active={this.state.active}
             actionsPosition="center"
             title="Use Google's location service?"
             onOverlayClick={this.handleToggle}
@@ -48,7 +49,7 @@ class ContextComponent extends React.Component {
 
   static childContextTypes = {
     message: PropTypes.string
-  }
+  };
 
   getChildContext () {
     return {
@@ -64,7 +65,7 @@ class ContextComponent extends React.Component {
 class DialogChild extends React.Component {
   static contextTypes = {
     message: PropTypes.string
-  }
+  };
 
   render () {
     return <p>This message comes from a parent: <strong>{this.context.message}</strong></p>;

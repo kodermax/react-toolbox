@@ -13,7 +13,6 @@ const contextTypes = {
 };
 
 const StepConnector = (props, context) => {
-  console.log(context);
   const {stepper} = context;
   const styles = {
     wrapper: {

@@ -80,7 +80,6 @@ class AutosuggestTest extends React.Component {
         <h5>Autosuggest</h5>
         <Autosuggest
           label="Choose a user"
-          multiple={false}
           onChange={this.handleChange}
           onFocus={this.handleQueryFocus}
           onSelectItem={this.handleSelect}
