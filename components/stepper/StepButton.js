@@ -16,7 +16,8 @@ const getStyles = (props, context, state) => {
     root: {
       padding: 0,
       backgroundColor: hovered ? hoverBackgroundColor : backgroundColor,
-      transition: transitions.easeOut()
+      transition: transitions.easeOut(),
+      height: '6.6rem'
     }
   };
 
