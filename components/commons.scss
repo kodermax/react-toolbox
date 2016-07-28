@@ -1,7 +1,7 @@
 @import "./colors";
 @import "./globals";
 @import "./mixins";
-
+@import "~normalize.css";
 
 html {
   font-size: 62.5%;
@@ -88,4 +88,9 @@ h6 {
 
 p {
   @include typo-body-1;
+}
+*, :after, :before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
