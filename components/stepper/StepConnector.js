@@ -40,7 +40,7 @@ const StepConnector = (props, context) => {
 
   return (
     <div style={styles.wrapper}>
-      <span style={styles.line}></span>
+      <span style={styles.line}/>
     </div>
   );
 };

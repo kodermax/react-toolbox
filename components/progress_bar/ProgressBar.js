@@ -96,7 +96,7 @@ class ProgressBar extends Component {
         className={_className}
       >
         {type === 'circular' ? this.renderCircular() : this.renderLinear()}
-      </div> : <div></div>
+      </div> : <div/>
     );
   }
 }
