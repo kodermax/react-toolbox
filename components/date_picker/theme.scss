@@ -3,7 +3,7 @@
 @import "../mixins";
 @import "./config";
 
-.input > [role="input"] {
+.input:not(.disabled) > .inputElement {
   cursor: pointer;
 }
 
@@ -101,6 +101,7 @@
     cursor: pointer;
     &.active {
       font-size: $calendar-year-font-size;
+      font-weight: $font-weight-semi-bold;
       color: $calendar-primary-color;
     }
   }

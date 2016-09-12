@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface TableTheme {
   /**
@@ -23,7 +24,7 @@ export interface TableTheme {
   table?: string;
 }
 
-interface TableProps extends __ReactToolbox.Props {
+interface TableProps extends ReactToolbox.Props {
   /**
    * If true, component will show a heading using model field names.
    * @default true
@@ -40,7 +41,7 @@ interface TableProps extends __ReactToolbox.Props {
   /**
    * Callback function invoked when the row selection changes.
    */
-  onSelect?: __React.FormEventHandler;
+  onSelect?: Function;
   /**
    * If true, each row will display a checkbox to allow the user to select that one row.
    * @default true
@@ -65,6 +66,6 @@ interface TableProps extends __ReactToolbox.Props {
   theme?: TableTheme;
 }
 
-export class Table extends __React.Component<TableProps, {}> { }
+export class Table extends React.Component<TableProps, {}> { }
 
 export default Table;

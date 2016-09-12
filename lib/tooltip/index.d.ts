@@ -1,3 +1,4 @@
+import * as React from "react";
 export interface TooltipTheme {
   /**
    * Added to the tooltip element.
@@ -14,14 +15,6 @@ export interface TooltipTheme {
 }
 
 interface TooltipProps {
-  /**
-   * Callback called when the mouse enters the Component.
-   */
-  onMouseEnter?: __React.MouseEventHandler;
-  /**
-   * Callback called when the mouse leaves the Component.
-   */
-  onMouseLeave?: __React.MouseEventHandler;
   /**
    * Classnames object defining the component style.
    */
@@ -41,7 +34,7 @@ interface TooltipProps {
   tooltipHideOnClick?: boolean;
 }
 
-declare class TooltipComponent<P, S> extends __React.Component<P, S> {
+declare class TooltipComponent<P, S> extends React.Component<P, S> {
   props: P & TooltipProps;
 }
 
@@ -49,6 +42,6 @@ interface TooltippedComponentClass<P> extends TooltipProps {
   new (props?: P, context?: any): TooltipComponent<P, any>;
 }
 
-export function Tooltip<P>(componentClass: __React.ComponentClass<P>): TooltippedComponentClass<P>;
+export function Tooltip<P>(componentClass: React.ComponentClass<P>): TooltippedComponentClass<P>;
 
 export default Tooltip;

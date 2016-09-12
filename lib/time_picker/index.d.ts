@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface TimePickerTheme {
   /**
@@ -101,6 +102,10 @@ interface TimePickerProps {
    */
   error?: string;
   /**
+   * A key to identify an Icon from Material Design Icons or a custom Icon Element.
+   */
+  icon?: React.ReactNode | string;
+  /**
    * This class will be applied to Input component of TimePicker.
    */
   inputClassName?: string;
@@ -127,6 +132,6 @@ interface TimePickerProps {
   value?: Date;
 }
 
-export class TimePicker extends __React.Component<TimePickerProps, {}> { }
+export class TimePicker extends React.Component<TimePickerProps, {}> { }
 
 export default TimePicker;

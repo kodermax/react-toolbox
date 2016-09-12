@@ -18,6 +18,7 @@ const factory = (Input) => {
       name: PropTypes.string,
       onBlur: PropTypes.func,
       onChange: PropTypes.func,
+      onClick: PropTypes.func,
       onFocus: PropTypes.func,
       source: PropTypes.array.isRequired,
       template: PropTypes.func,
@@ -83,11 +84,12 @@ const factory = (Input) => {
       }
     };
 
-    handleMouseDown = (event) => {
+    handleClick = (event) => {
       events.pauseEvent(event);
       const client = event.target.getBoundingClientRect();
       const screen_height = window.innerHeight || document.documentElement.offsetHeight;
       const up = this.props.auto ? client.top > ((screen_height / 2) + client.height) : false;
+      if (this.props.onClick) this.props.onClick(event);
       if (this.props.onFocus) this.props.onFocus(event);
       this.setState({active: true, up});
     };
@@ -121,7 +123,7 @@ const factory = (Input) => {
       });
 
       return (
-        <div className={className} onMouseDown={this.handleMouseDown}>
+        <div className={className} onClick={this.handleClick}>
           <div className={`${theme.templateValue} ${theme.value}`}>
             {this.props.template(selected)}
           </div>
@@ -131,15 +133,15 @@ const factory = (Input) => {
       );
     }
 
-    renderValue (item, idx) {
+    renderValue = (item, idx) => {
       const { theme } = this.props;
       const className = item.value === this.props.value ? theme.selected : null;
       return (
-        <li key={idx} className={className} onMouseDown={this.handleSelect.bind(this, item.value)}>
+        <li key={idx} className={className} onClick={this.handleSelect.bind(this, item.value)}>
           {this.props.template ? this.props.template(item) : item.label}
         </li>
       );
-    }
+    };
 
     render () {
       const {template, theme, source, allowBlank, auto, ...others} = this.props; //eslint-disable-line no-unused-vars
@@ -155,14 +157,14 @@ const factory = (Input) => {
           <Input
             {...others}
             className={theme.value}
-            onMouseDown={this.handleMouseDown}
+            onClick={this.handleClick}
             readOnly
             type={template && selected ? 'hidden' : null}
             value={selected && selected.label ? selected.label : ''}
           />
         {template && selected ? this.renderTemplateValue(selected) : null}
           <ul className={theme.values} ref='values'>
-            {source.map(this.renderValue.bind(this))}
+            {source.map(this.renderValue)}
           </ul>
         </div>
       );

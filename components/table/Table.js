@@ -47,15 +47,16 @@ const factory = (TableHead, TableRow) => {
     };
     handleRowSelect = (index) => {
       if (this.props.onSelect) {
-        const position = this.props.selected.indexOf(index);
-        let newSelected = [...this.props.selected];
-        if (position !== -1) { newSelected.splice(position, 1); }
-        if (position !== -1 && this.props.multiSelectable) {
-          newSelected.push(index);
+        let newSelection = [...this.props.selected];
+        if (this.props.multiSelectable) {
+          const position = this.props.selected.indexOf(index);
+          newSelection = position !== -1
+            ? newSelection.filter((el, idx) => idx !== position)
+            : newSelection.concat([index]);
         } else {
-          newSelected = [index];
+          newSelection = [index];
         }
-        this.props.onSelect(newSelected);
+        this.props.onSelect(newSelection);
       }
     };
 

@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface SwitchTheme {
   /**
@@ -35,7 +36,7 @@ export interface SwitchTheme {
   thumb?: string;
 }
 
-interface SwitchProps extends __ReactToolbox.Props {
+interface SwitchProps extends ReactToolbox.Props {
   /**
    * If true, the switch will be enabled.
    * @default false
@@ -57,21 +58,21 @@ interface SwitchProps extends __ReactToolbox.Props {
   /**
    * Callback function that is fired when when the switch is blurred.
    */
-  onBlur?: __React.FocusEventHandler;
+  onBlur?: Function;
   /**
    * Callback function that is fired when the component's value changes.
    */
-  onChange?: __React.FormEventHandler;
+  onChange?: Function;
   /**
    * Callback function that is fired when the switch is focused.
    */
-  onFocus?: __React.FocusEventHandler;
+  onFocus?: Function;
   /**
    * Classnames object defining the component style.
    */
   theme?: SwitchTheme;
 }
 
-export class Switch extends __React.Component<SwitchProps, {}> { }
+export class Switch extends React.Component<SwitchProps, {}> { }
 
 export default Switch;

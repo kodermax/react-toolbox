@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface ChipTheme {
   /**
@@ -27,11 +28,11 @@ export interface ChipTheme {
   deleteX?: string;
 }
 
-interface ChipProps extends __ReactToolbox.Props {
+interface ChipProps extends ReactToolbox.Props {
   /**
    * Children to pass through the component.
    */
-  children?: __React.ReactNode;
+  children?: React.ReactNode;
   /**
    * If true, the chip will be rendered with a delete icon.
    * @default false
@@ -40,13 +41,13 @@ interface ChipProps extends __ReactToolbox.Props {
   /**
    * Callback to be invoked when the delete icon is clicked.
    */
-  onDeleteClick?: __React.MouseEventHandler;
+  onDeleteClick?: Function;
   /**
    * Classnames object defining the component style.
    */
   theme?: ChipTheme;
 }
 
-export class Chip extends __React.Component<ChipProps, {}> { }
+export class Chip extends React.Component<ChipProps, {}> { }
 
 export default Chip;

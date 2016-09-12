@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface InputTheme {
   /**
@@ -51,11 +52,11 @@ export interface InputTheme {
   withIcon?: string;
 }
 
-interface InputProps extends __ReactToolbox.Props {
+interface InputProps extends ReactToolbox.Props {
   /**
    * Children to pass through the component.
    */
-  children?: __React.ReactNode;
+  children?: React.ReactNode;
   /**
    * If true, component will be disabled.
    * @default false
@@ -77,7 +78,7 @@ interface InputProps extends __ReactToolbox.Props {
   /**
    * Name of an icon to use as a label for the input.
    */
-  icon?: __React.ReactNode | string;
+  icon?: React.ReactNode | string;
   /**
    * The text string to use for the floating label element.
    */
@@ -90,7 +91,7 @@ interface InputProps extends __ReactToolbox.Props {
    * If true, a textarea element will be rendered. The textarea also grows and shrinks according to the number of lines.
    * @default false
    */
-  multiLine?: boolean;
+  multiline?: boolean;
   /**
    * Name for the input field.
    */
@@ -98,19 +99,19 @@ interface InputProps extends __ReactToolbox.Props {
   /**
    * Callback function that is fired when component is blurred.
    */
-  onBlur?: __React.FocusEventHandler;
+  onBlur?: Function;
   /**
    * Callback function that is fired when the component's value changes
    */
-  onChange?: __React.FormEventHandler;
+  onChange?: Function;
   /**
    * Callback function that is fired when component is focused.
    */
-  onFocus?: __React.FocusEventHandler;
+  onFocus?: Function;
   /**
    * Callback function that is fired when a key is pressed.
    */
-  onKeyPress?: __React.MouseEventHandler;
+  onKeyPress?: Function;
   /**
    * If true, the html input has a required attribute.
    * @default false
@@ -130,6 +131,6 @@ interface InputProps extends __ReactToolbox.Props {
   value?: any;
 }
 
-export class Input extends __React.Component<InputProps, {}> { }
+export class Input extends React.Component<InputProps, {}> { }
 
 export default Input;

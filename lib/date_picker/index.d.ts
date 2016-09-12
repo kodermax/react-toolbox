@@ -1,4 +1,5 @@
-import __ReactToolbox from "../index.d.ts";
+import * as React from "react";
+import ReactToolbox from "../index";
 
 export interface DatePickerTheme {
   /**
@@ -83,7 +84,7 @@ export interface DatePickerTheme {
   yearsDisplay?: string;
 }
 
-interface DatePickerProps extends __ReactToolbox.Props {
+interface DatePickerProps extends ReactToolbox.Props {
   /**
    * Automatically selects a date upon clicking on a day
    * @default false
@@ -96,7 +97,7 @@ interface DatePickerProps extends __ReactToolbox.Props {
   /**
    * A key to identify an Icon from Material Design Icons or a custom Icon Element.
    */
-  icon?: __React.ReactNode | string;
+  icon?: React.ReactNode | string;
   /**
    * This class will be applied to Input component of DatePicker.
    */
@@ -124,15 +125,15 @@ interface DatePickerProps extends __ReactToolbox.Props {
   /**
    * Callback called when the picker value is changed.
    */
-  onChange?: __React.MouseEventHandler;
+  onChange?: Function;
   /**
    * Callback called when the ESC key is pressed with the overlay active.
    */
-  onEscKeyDown?: __React.KeyboardEventHandler;
+  onEscKeyDown?: Function;
   /**
    * Callback to be invoked when the dialog overlay is clicked.
    */
-  onOverlayClick?: __React.MouseEventHandler;
+  onOverlayClick?: Function;
   /**
    * Classnames object defining the component style.
    */
@@ -143,6 +144,6 @@ interface DatePickerProps extends __ReactToolbox.Props {
   value?: Date | string;
 }
 
-export class DatePicker extends __React.Component<DatePickerProps, {}> { }
+export class DatePicker extends React.Component<DatePickerProps, {}> { }
 
 export default DatePicker;
