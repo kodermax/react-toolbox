@@ -26,31 +26,28 @@ class Overlay extends Component {
 
   componentDidMount () {
     if (this.props.active) {
-      this.escKeyListener = document.body.addEventListener('keydown', this.handleEscKey.bind(this));
+      document.body.addEventListener('keydown', this.handleEscKey);
       document.body.style.overflow = 'hidden';
     }
   }
 
   componentWillUpdate (nextProps) {
     if (nextProps.active && !this.props.active) document.body.style.overflow = 'hidden';
-    if (!nextProps.active && this.props.active) document.body.style.overflow = null;
+    if (!nextProps.active && this.props.active && !document.querySelectorAll('[data-react-toolbox="overlay"]')[1]) document.body.style.overflow = '';
   }
 
   componentDidUpdate () {
-    if (this.props.active && !this.escKeyListener) {
-      this.escKeyListener = document.body.addEventListener('keydown', this.handleEscKey.bind(this));
+    if (this.props.active) {
+      document.body.addEventListener('keydown', this.handleEscKey);
     }
   }
 
   componentWillUnmount () {
-    document.body.style.overflow = null;
-    if (this.escKeyListener) {
-      document.body.removeEventListener('keydown', this.handleEscKey);
-      this.escKeyListener = null;
-    }
+    if (!document.querySelectorAll('[data-react-toolbox="overlay"]')[1]) document.body.style.overflow = '';
+    document.body.removeEventListener('keydown', this.handleEscKey);
   }
 
-  handleEscKey (e) {
+  handleEscKey = (e) => {
     if (this.props.active && this.props.onEscKeyDown && e.which === 27) {
       this.props.onEscKeyDown(e);
     }
@@ -65,7 +62,7 @@ class Overlay extends Component {
 
     return (
       <Portal>
-        <div className={_className}>
+        <div className={_className} data-react-toolbox="overlay">
           <div className={theme.backdrop} onClick={onClick} />
           {children}
         </div>

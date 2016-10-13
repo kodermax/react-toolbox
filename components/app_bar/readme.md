@@ -26,17 +26,19 @@ The `AppBar` component provides properties for the common use cases of `title`, 
 | `flat`             | `Bool`     | `false` | If true, the AppBar shows a shadow.|
 | `theme`            | `Object`   | `null`  | Classnames object defining the component style.|
 | `title`            | `String`   | `null`  | Title used for the appbar.|
-| `leftIcon`         | `String`   | `null`  | Left icon.|
+| `leftIcon`         | `String|Element`   | `null`  | Left icon.|
 | `onLeftIconClick`  | `Function` | `null`  | Called on left icon click event.|
-| `rightIcon`        | `String`   | `null`  | Right icon.|
+| `rightIcon`        | `String|Element`   | `null`  | Right icon.|
 | `onRightIconClick` | `Function` | `null`  | Called on right icon click event.|
 
 ## Theme
 
-| Name        | Description|
-|:------------|:-----------|
-| `appBar`    | Used for the component root element.|
-| `fixed`     | Added to the root element when the app bar is fixed.|
-| `title`     | Added to the title element of the app bar.|
-| `leftIcon`  | Added to the left icon element when the app bar.|
-| `rightIcon` | Added to the right icon element when the app bar.|
+| Name         | Description|
+|:-------------|:-----------|
+| `appBar`     | Used for the component root element.|
+| `fixed`      | Added to the root element when the app bar is fixed.|
+| `flat`       | Added to the root element when the app bar is flat.|
+| `title`      | Added to the title element of the app bar.|
+| `leftIcon`   | Added to the left icon element when the app bar.|
+| `rightIcon`  | Added to the right icon element when the app bar.|
+| `scrollHide` | Added to the root element when the app bar is hidden during scroll.|
