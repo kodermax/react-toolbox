@@ -1,0 +1,15 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "dev.pharm.local",
+  "target": "/home/bitrix/react-biz",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "bitrix",
+  "password": "!Merlin2010",
+  "watch": [],
+  "transport": "scp"
+}
