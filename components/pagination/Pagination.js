@@ -1,7 +1,7 @@
 import React from 'react';
 import {IconButton} from '../button';
 import Dropdown from '../dropdown';
-import style from './style';
+import style from './style.scss';
 
 export default class Pagination extends React.Component {
   static propTypes = {
