@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ClassNames from 'classnames';
 import Input from '../input';
-import style from './style';
+import style from './style.scss';
 import events from '../utils/events';
 
 export default class Autosuggest extends React.Component {
