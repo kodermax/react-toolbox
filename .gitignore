@@ -1,7 +1,6 @@
+lib
 build
 node_modules
-npm-debug.log*
-yarn.lock
+npm-debug.log
 .idea
 .DS_Store
-lib

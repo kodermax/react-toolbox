@@ -1,8 +1,8 @@
-import { AVATAR } from '../identifiers.js';
 import { themr } from 'react-css-themr';
-import { avatarFactory } from './Avatar.js';
-import FontIcon from '../font_icon/FontIcon.js';
-import theme from './theme.scss';
+import { AVATAR } from '../identifiers';
+import { avatarFactory } from './Avatar';
+import { FontIcon } from '../font_icon/FontIcon';
+import theme from './theme.css';
 
 const Avatar = avatarFactory(FontIcon);
 const ThemedAvatar = themr(AVATAR, theme)(Avatar);

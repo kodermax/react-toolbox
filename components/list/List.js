@@ -1,43 +1,47 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
-import { LIST } from '../identifiers.js';
-import InjectListItem from './ListItem.js';
+import { LIST } from '../identifiers';
+import InjectListItem from './ListItem';
+
+const mergeProp = (propName, child, parent) => (
+  child[propName] !== undefined
+  ? child[propName]
+  : parent[propName]
+);
 
 const factory = (ListItem) => {
   class List extends Component {
     static propTypes = {
       children: PropTypes.node,
       className: PropTypes.string,
-      ripple: PropTypes.bool,
-      selectable: PropTypes.bool,
       theme: PropTypes.shape({
-        list: PropTypes.string
-      })
+        list: PropTypes.string,
+      }),
     };
 
     static defaultProps = {
       className: '',
       ripple: false,
-      selectable: false
+      selectable: false,
     };
 
-    renderItems () {
+    renderItems() {
       return React.Children.map(this.props.children, (item) => {
-        if (item.type === ListItem) {
-          return React.cloneElement(item, {
-            ripple: this.props.ripple,
-            selectable: this.props.selectable
-          });
-        } else {
-          return React.cloneElement(item);
+        if (item === null || item === undefined) {
+          return item;
+        } else if (item.type === ListItem) {
+          const selectable = mergeProp('selectable', item.props, this.props);
+          const ripple = mergeProp('ripple', item.props, this.props);
+          return React.cloneElement(item, { selectable, ripple });
         }
+        return React.cloneElement(item);
       });
     }
 
-    render () {
+    render() {
       return (
-        <ul data-react-toolbox='list' className={classnames(this.props.theme.list, this.props.className)}>
+        <ul data-react-toolbox="list" className={classnames(this.props.theme.list, this.props.className)}>
           {this.renderItems()}
         </ul>
       );

@@ -1,6 +1,6 @@
 # Button
 
-A [button](https://www.google.com/design/spec/components/buttons.html) clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
+A [button](https://material.google.com/components/buttons.html) clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
 
 <!-- example -->
 ```jsx
@@ -48,12 +48,14 @@ If you want to provide a theme via context, the component key is `RTButton`.
 | `label`           | `String`              |             | The text string to use for the name of the button.|
 | `mini`            | `Boolean`             | `false`     | To be used with floating button. If true, the button will be smaller.|
 | `neutral`         | `Boolean`             | `true`      | Set it to `false` if you don't want the neutral styles to be included.|
+| `onMouseEnter`    | `Function`            |             | Fires after the mouse enters the Component.|
 | `onMouseLeave`    | `Function`            |             | Fires after the mouse leaves the Component.|
 | `onMouseUp`       | `Function`            |             | Fires after the mouse is released from the Component.|
 | `primary`         | `Boolean`             | `false`     | Indicates if the button should have primary color.|
 | `raised`          | `Boolean`             | `false`     | If true, the button will have a raised look. |
 | `ripple`          | `Boolean`             | `true`      | If true, component will have a ripple effect on click.|
 | `theme`           | `Object`              |             | Theme object will classnames that will be used to style the component.|
+| `type`            | `String`              | `button`    | Component root container type.|
 
 By default it will have neutral colors and a flat aspect even though the `flat` property is `false` by default. Also, some properties exclude others, for example a button cannot be `flat` and `raised` at the same time.
 

@@ -1,6 +1,6 @@
 # Menu
 
-A [Menu](https://www.google.com/design/spec/components/menus.html) is a temporary piece of material emitted from a button, an action, a pointer, or another control that contains at least two menu items. Each menu item is a discrete option or action that can affect the app, the view, or selected elements within a view. Menus should not be used as a primary method for navigation within an app. You can compose a menu based on a few subcomponents, same as for Lists.
+A [Menu](https://material.google.com/components/menus.html) is a temporary piece of material emitted from a button, an action, a pointer, or another control that contains at least two menu items. Each menu item is a discrete option or action that can affect the app, the view, or selected elements within a view. Menus should not be used as a primary method for navigation within an app. You can compose a menu based on a few subcomponents, same as for Lists.
 
 <!-- example -->
 ```jsx
@@ -64,6 +64,7 @@ As the most usual scenario will be to open the menu from a click in an Icon, we 
 | `className`     | `String`              |  `''`           | Set a class to give custom styles to the icon wrapper.|
 | `icon`          | `String` or `Element` | `more_vert`     | Icon font key string or Element to display the opener icon. |
 | `iconRipple`    | `Boolean`             | `true`          | If true, the icon will show a ripple when is clicked. |
+| `inverse`       | `Boolean`             | `false`         | If true, the neutral colors are inverted. Useful if the icon is over a dark background. |
 | `menuRipple`    | `Boolean`             | `true`          | Transferred to the `Menu` component. |
 | `onClick`       | `Function`            |                 | Callback that will be called when the icon is clicked. |
 | `onHide`        | `Function`            |                 | Callback that will be called when the menu is being hidden. |

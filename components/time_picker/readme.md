@@ -1,6 +1,6 @@
 # Time Picker
 
-A [dialog picker](https://www.google.com/design/spec/components/pickers.html#pickers-time-pickers) is used to select a single time (hours:minutes). The selected time is indicated by the filled circle at the end of the clock hand.
+A [dialog picker](https://material.google.com/components/pickers.html#pickers-time-pickers) is used to select a single time (hours:minutes). The selected time is indicated by the filled circle at the end of the clock hand.
 
 <!-- example -->
 ```jsx
@@ -56,6 +56,7 @@ If you want to provide a theme via context, the component key is `RTTimePicker`.
 | `button` | Used for buttons inside the dialog of the picker.|
 | `clock` | Clock root class element.|
 | `clockWrapper` | Wrapper for the proper positioning of the clock.|
+| `container` | Wrapper element of the picker.|
 | `dialog` | Used for the dialog component.|
 | `face` | Used to style the clock face.|
 | `hand` | Used for the clock's hand.|

@@ -3,7 +3,7 @@ import { AppBar } from 'react-toolbox';
 import { Link } from 'react-router';
 import Logo from '../logo';
 import Navigation from '../navigation';
-import style from './style';
+import style from './style.css';
 
 const MainAppBar = (props) => {
   let className = style.appbar;
@@ -11,10 +11,10 @@ const MainAppBar = (props) => {
 
   return (
     <AppBar className={className} flat fixed>
-      <Link to='/'>
+      <Link to="/">
         <Logo className={style.logo} />
       </Link>
-      <Navigation activeClassName={style.active} className={style.navigation}/>
+      <Navigation activeClassName={style.active} className={style.navigation} />
     </AppBar>
   );
 };

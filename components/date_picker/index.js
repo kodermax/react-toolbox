@@ -1,13 +1,13 @@
 import { themr } from 'react-css-themr';
-import { DATE_PICKER, DIALOG } from '../identifiers.js';
-import { datePickerFactory } from './DatePicker.js';
-import datePickerDialogFactory from './DatePickerDialog.js';
-import calendarFactory from './Calendar.js';
+import { DATE_PICKER, DIALOG } from '../identifiers';
+import { datePickerFactory } from './DatePicker';
+import datePickerDialogFactory from './DatePickerDialog';
+import calendarFactory from './Calendar';
 
 import { IconButton } from '../button';
-import Input from '../input';
-import Dialog from '../dialog';
-import theme from './theme.scss';
+import { Input } from '../input';
+import { Dialog } from '../dialog';
+import theme from './theme.css';
 
 const Calendar = calendarFactory(IconButton);
 const DatePickerDialog = datePickerDialogFactory(Dialog, Calendar);

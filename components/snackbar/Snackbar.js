@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
-import { SNACKBAR } from '../identifiers.js';
-import ActivableRenderer from '../hoc/ActivableRenderer.js';
-import InjectOverlay from '../overlay/Overlay.js';
-import InjectButton from '../button/Button.js';
+import { SNACKBAR } from '../identifiers';
+import ActivableRenderer from '../hoc/ActivableRenderer';
+import InjectButton from '../button/Button';
+import Portal from '../hoc/Portal';
 
-const factory = (Overlay, Button) => {
+const factory = (Button) => {
   class Snackbar extends Component {
     static propTypes = {
       action: PropTypes.string,
@@ -15,7 +15,7 @@ const factory = (Overlay, Button) => {
       className: PropTypes.string,
       label: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.element
+        PropTypes.element,
       ]),
       onClick: PropTypes.func,
       onTimeout: PropTypes.func,
@@ -24,45 +24,55 @@ const factory = (Overlay, Button) => {
         active: PropTypes.string,
         button: PropTypes.string,
         cancel: PropTypes.string,
-        icon: PropTypes.string,
         label: PropTypes.string,
         snackbar: PropTypes.string,
-        warning: PropTypes.string
+        warning: PropTypes.string,
       }),
       timeout: PropTypes.number,
-      type: PropTypes.oneOf([ 'accept', 'cancel', 'warning' ])
+      type: PropTypes.oneOf(['accept', 'cancel', 'warning']),
     };
 
-    componentWillReceiveProps (nextProps) {
-      if (nextProps.active && nextProps.timeout) {
-        if (this.curTimeout) clearTimeout(this.curTimeout);
-        this.curTimeout = setTimeout(() => {
-          nextProps.onTimeout();
-          this.curTimeout = null;
-        }, nextProps.timeout);
+    componentDidMount() {
+      if (this.props.active && this.props.timeout) {
+        this.scheduleTimeout(this.props);
       }
     }
 
-    componentWillUnmount () {
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.active && nextProps.timeout) {
+        this.scheduleTimeout(nextProps);
+      }
+    }
+
+    componentWillUnmount() {
       clearTimeout(this.curTimeout);
     }
 
-    render () {
-      const {action, active, children, label, onClick, theme, type } = this.props;
+    scheduleTimeout = (props) => {
+      const { onTimeout, timeout } = props;
+      if (this.curTimeout) clearTimeout(this.curTimeout);
+      this.curTimeout = setTimeout(() => {
+        if (onTimeout) onTimeout();
+        this.curTimeout = null;
+      }, timeout);
+    }
+
+    render() {
+      const { action, active, children, label, onClick, theme, type } = this.props;
       const className = classnames([theme.snackbar, theme[type]], {
-        [theme.active]: active
+        [theme.active]: active,
       }, this.props.className);
 
       return (
-        <Overlay invisible>
-          <div data-react-toolbox='snackbar' className={className}>
+        <Portal className={theme.portal}>
+          <div data-react-toolbox="snackbar" className={className}>
             <span className={theme.label}>
               {label}
               {children}
             </span>
-            {action ? <Button className={theme.button} label={action} onClick={onClick}/> : null}
+            {action ? <Button className={theme.button} label={action} onClick={onClick} /> : null}
           </div>
-        </Overlay>
+        </Portal>
       );
     }
   }
@@ -70,7 +80,7 @@ const factory = (Overlay, Button) => {
   return ActivableRenderer()(Snackbar);
 };
 
-const Snackbar = factory(InjectOverlay, InjectButton);
+const Snackbar = factory(InjectButton);
 export default themr(SNACKBAR)(Snackbar);
 export { factory as snackbarFactory };
 export { Snackbar };

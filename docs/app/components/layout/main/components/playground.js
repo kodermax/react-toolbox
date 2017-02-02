@@ -2,7 +2,7 @@ import React from 'react';
 import Editor from '../../../editor';
 import Preview from '../../../preview';
 import codeText from '../modules/examples/example.txt';
-import style from './playground.scss';
+import style from './playground.css';
 
 class Playground extends React.Component {
   static propTypes = {
@@ -14,7 +14,7 @@ class Playground extends React.Component {
   };
 
   handleCodeChange = (code) => {
-    this.setState({code});
+    this.setState({ code });
   };
 
   loadCode (code) {
@@ -25,7 +25,7 @@ class Playground extends React.Component {
     return (
       <aside className={this.props.className}>
         <Editor
-          ref='editor'
+          ref="editor"
           className={style.editor}
           codeText={this.state.code}
           onChange={this.handleCodeChange}

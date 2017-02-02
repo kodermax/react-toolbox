@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { themr } from 'react-css-themr';
-import { DROPDOWN } from '../identifiers.js';
-import InjectInput from '../input/Input.js';
-import events from '../utils/events.js';
+import { DROPDOWN } from '../identifiers';
+import InjectInput from '../input/Input';
+import events from '../utils/events';
 
 const factory = (Input) => {
   class Dropdown extends Component {
@@ -21,7 +22,10 @@ const factory = (Input) => {
       onClick: PropTypes.func,
       onFocus: PropTypes.func,
       required: PropTypes.bool,
-      source: PropTypes.array.isRequired,
+      source: PropTypes.arrayOf(PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+      ])).isRequired,
       template: PropTypes.func,
       theme: PropTypes.shape({
         active: PropTypes.string,
@@ -36,12 +40,12 @@ const factory = (Input) => {
         templateValue: PropTypes.string,
         up: PropTypes.string,
         value: PropTypes.string,
-        values: PropTypes.string
+        values: PropTypes.string,
       }),
       value: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
-      ])
+        PropTypes.number,
+      ]),
     };
 
     static defaultProps = {
@@ -49,27 +53,27 @@ const factory = (Input) => {
       className: '',
       allowBlank: true,
       disabled: false,
-      required: false
+      required: false,
     };
 
     state = {
       active: false,
-      up: false
+      up: false,
     };
 
-    componentWillUpdate (nextProps, nextState) {
+    componentWillUpdate(nextProps, nextState) {
       if (!this.state.active && nextState.active) {
         events.addEventsToDocument(this.getDocumentEvents());
       }
     }
 
-    componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) {
       if (prevState.active && !this.state.active) {
         events.removeEventsFromDocument(this.getDocumentEvents());
       }
     }
 
-    componentWillUnmount () {
+    componentWillUnmount() {
       if (this.state.active) {
         events.removeEventsFromDocument(this.getDocumentEvents());
       }
@@ -77,59 +81,71 @@ const factory = (Input) => {
 
     getDocumentEvents = () => ({
       click: this.handleDocumentClick,
-      touchend: this.handleDocumentClick
+      touchend: this.handleDocumentClick,
     });
-
-    close = () => {
-      if (this.state.active) {
-        this.setState({active: false});
-      }
-    }
-
-    handleDocumentClick = (event) => {
-      if (this.state.active && !events.targetIsDescendant(event, ReactDOM.findDOMNode(this))) {
-        this.setState({active: false});
-      }
-    };
-
-    handleClick = (event) => {
-      events.pauseEvent(event);
-      const client = event.target.getBoundingClientRect();
-      const screen_height = window.innerHeight || document.documentElement.offsetHeight;
-      const up = this.props.auto ? client.top > ((screen_height / 2) + client.height) : false;
-      if (this.props.onClick) this.props.onClick(event);
-      if (this.props.onFocus) this.props.onFocus(event);
-      if (this.inputNode) this.inputNode.blur();
-      this.setState({active: true, up});
-    };
-
-    handleSelect = (item, event) => {
-      if (this.props.onBlur) this.props.onBlur(event);
-      if (!this.props.disabled && this.props.onChange) {
-        if (this.props.name) {
-          event.target.name = this.props.name;
-        }
-        this.props.onChange(item, event);
-        this.setState({active: false});
-      }
-    };
 
     getSelectedItem = () => {
       for (const item of this.props.source) {
         if (item.value === this.props.value) return item;
       }
-      if (!this.props.allowBlank) {
-        return this.props.source[0];
-      }
-      return '';
+      return !this.props.allowBlank
+        ? this.props.source[0]
+        : undefined;
     };
 
-    renderTemplateValue (selected) {
+    handleSelect = (item, event) => {
+      if (this.props.onBlur) this.props.onBlur(event);
+      if (!this.props.disabled && this.props.onChange) {
+        if (this.props.name) event.target.name = this.props.name;
+        this.props.onChange(item, event);
+        this.close();
+      }
+    };
+
+    handleClick = (event) => {
+      this.open(event);
+      events.pauseEvent(event);
+      if (this.props.onClick) this.props.onClick(event);
+    };
+
+    handleDocumentClick = (event) => {
+      if (this.state.active && !events.targetIsDescendant(event, ReactDOM.findDOMNode(this))) {
+        this.setState({ active: false });
+      }
+    };
+
+    close = () => {
+      if (this.state.active) {
+        this.setState({ active: false });
+      }
+    }
+
+    open = (event) => {
+      const client = event.target.getBoundingClientRect();
+      const screenHeight = window.innerHeight || document.documentElement.offsetHeight;
+      const up = this.props.auto ? client.top > ((screenHeight / 2) + client.height) : false;
+      if (this.inputNode) this.inputNode.blur();
+      this.setState({ active: true, up });
+    };
+
+    handleFocus = (event) => {
+      event.stopPropagation();
+      if (!this.props.disabled) this.open(event);
+      if (this.props.onFocus) this.props.onFocus(event);
+    };
+
+    handleBlur = (event) => {
+      event.stopPropagation();
+      if (this.state.active) this.close();
+      if (this.props.onBlur) this.props.onBlur(event);
+    }
+
+    renderTemplateValue(selected) {
       const { theme } = this.props;
       const className = classnames(theme.field, {
         [theme.errored]: this.props.error,
         [theme.disabled]: this.props.disabled,
-        [theme.required]: this.props.required
+        [theme.required]: this.props.required,
       });
 
       return (
@@ -138,11 +154,12 @@ const factory = (Input) => {
             {this.props.template(selected)}
           </div>
           {this.props.label
-            ? <label className={theme.label}>
+            ? (
+              <label htmlFor={this.props.name} className={theme.label}>
                 {this.props.label}
                 {this.props.required ? <span className={theme.required}> * </span> : null}
               </label>
-            : null}
+            ) : null}
           {this.props.error ? <span className={theme.error}>{this.props.error}</span> : null}
         </div>
       );
@@ -150,38 +167,56 @@ const factory = (Input) => {
 
     renderValue = (item, idx) => {
       const { theme } = this.props;
-      const className = item.value === this.props.value ? theme.selected : null;
+      const className = classnames({
+        [theme.selected]: item.value === this.props.value,
+        [theme.disabled]: item.disabled,
+      });
       return (
-        <li key={idx} className={className} onClick={this.handleSelect.bind(this, item.value)}>
+        <li
+          key={idx}
+          className={className}
+          onClick={!item.disabled && this.handleSelect.bind(this, item.value)}
+        >
           {this.props.template ? this.props.template(item) : item.label}
         </li>
       );
     };
 
-    render () {
-      const {template, theme, source, allowBlank, auto, required, ...others} = this.props; //eslint-disable-line no-unused-vars
+    render() {
+      const {
+        allowBlank, auto, required, onChange, onFocus, onBlur, // eslint-disable-line no-unused-vars
+        source, template, theme, ...others
+      } = this.props;
       const selected = this.getSelectedItem();
       const className = classnames(theme.dropdown, {
         [theme.up]: this.state.up,
         [theme.active]: this.state.active,
         [theme.disabled]: this.props.disabled,
-        [theme.required]: this.props.required
+        [theme.required]: this.props.required,
       }, this.props.className);
 
       return (
-        <div data-react-toolbox='dropdown' className={className}>
+        <div
+          className={className}
+          data-react-toolbox="dropdown"
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+        >
           <Input
             {...others}
+            tabIndex="0"
             className={theme.value}
             onClick={this.handleClick}
             required={this.props.required}
             readOnly
-            ref={node => { this.inputNode = node && node.getWrappedInstance(); }}
+            ref={(node) => { this.inputNode = node && node.getWrappedInstance(); }}
             type={template && selected ? 'hidden' : null}
+            theme={theme}
+            themeNamespace="input"
             value={selected && selected.label ? selected.label : ''}
           />
-        {template && selected ? this.renderTemplateValue(selected) : null}
-          <ul className={theme.values} ref='values'>
+          {template && selected ? this.renderTemplateValue(selected) : null}
+          <ul className={theme.values}>
             {source.map(this.renderValue)}
           </ul>
         </div>

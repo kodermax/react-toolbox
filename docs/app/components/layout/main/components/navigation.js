@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { List, ListItem } from 'react-toolbox';
 import classnames from 'classnames';
 import components from '../modules/components';
-import style from './navigation.scss';
+import style from './navigation.css';
 
 const MainNavigation = ({ className }, { router }) => {
   const drawerItems = Object.keys(components).map((key) => {
@@ -13,7 +13,7 @@ const MainNavigation = ({ className }, { router }) => {
         caption={components[key].name}
         className={classnames(style.item, { [style.active]: isActive })}
         selectable
-        onClick={() => { router.push(components[key].path);}}
+        onClick={() => { router.push(components[key].path); }}
       />
     );
   });
